@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.7" method="upgrade">
+	<name>com_agadvents</name>
+	<author>Astrid Günther</author>
+	<creationDate>2018-12-09</creationDate>
+	<copyright>(C) 2018 Astrid Günther. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>1.0.76</version>
+	<description>COM_AGADVENTS_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+
+	<files folder="components/com_agadvents">
+		<folder>controllers</folder>
+<file>controller.php</file>
+<folder>models</folder>
+<file>agadvents.php</file>
+<folder>helpers</folder>
+<file>metadata.xml</file>
+<file>router.php</file>
+<folder>views</folder>
+	</files>
+	<languages folder="language">
+		<language tag="de-DE">de-DE/de-DE.com_agadvents.ini</language>
+<language tag="en-GB">en-GB/en-GB.com_agadvents.ini</language>
+	</languages>
+    <media folder="media/com_agadvents" destination="com_agadvents">
+		<folder>css</folder>
+<folder>js</folder>
+<folder>images</folder>
+    </media>
+	<administration>
+		<menu img="class:agadvents">com_agadvents</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu
+				link="option=com_agadvents"
+				view="agadvents"
+				img="class:agadvents"
+				alt="Agadvents/Links"
+			>
+				com_agadvents_links
+			</menu>
+			<menu
+				link="option=com_categories&amp;extension=com_agadvents"
+				view="categories"
+				img="class:agadvents-cat"
+				alt="Agadvents/Categories"
+			>
+				com_agadvents_categories
+			</menu>
+		</submenu>
+		<files folder="administrator/components/com_agadvents">
+			<folder>controllers</folder>
+<file>controller.php</file>
+<folder>models</folder>
+<file>access.xml</file>
+<folder>tables</folder>
+<file>script.php</file>
+<file>agadvents.php</file>
+<folder>helpers</folder>
+<folder>sql</folder>
+<file>config.xml</file>
+<file>CHANGES.txt</file>
+<file>agadvents.xml</file>
+<folder>views</folder>
+		</files>
+		<languages folder="administrator/language">
+			<language tag="de-DE">de-DE/de-DE.com_agadvents.sys.ini</language>
+<language tag="de-DE">de-DE/de-DE.com_agadvents.ini</language>
+<language tag="en-GB">en-GB/en-GB.com_agadvents.ini</language>
+<language tag="en-GB">en-GB/en-GB.com_agadvents.sys.ini</language>
+		</languages>
+	</administration>
+</extension>
+

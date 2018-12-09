@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.7" type="plugin" group="search" method="upgrade">
+	<name>plg_search_agadvents</name>
+	<author>Astrid Günther</author>
+	<creationDate>##DATE##</creationDate>
+	<copyright>(C) ##YEAR## Astrid Günther. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>##VERSION##</version>
+	<description>PLG_SEARCH_AGADVENTS_XML_DESCRIPTION</description>
+	<files>
+		##FILES##
+	</files>
+	<languages folder="administrator/language">
+		##LANGUAGE_FILES##
+	</languages>
+	<config>
+		<fields name="params">
+			<fieldset name="basic">
+				<field
+					name="search_limit"
+					type="text"
+					default="50"
+					description="JFIELD_PLG_SEARCH_SEARCHLIMIT_DESC"
+					label="JFIELD_PLG_SEARCH_SEARCHLIMIT_LABEL"
+					size="5"
+				/>
+
+				<field
+					name="search_content"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					description="JFIELD_PLG_SEARCH_ALL_DESC"
+					label="JFIELD_PLG_SEARCH_ALL_LABEL"
+				>
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+
+				<field
+					name="search_archived"
+					type="radio"
+					class="btn-group btn-group-yesno"
+					default="0"
+					description="JFIELD_PLG_SEARCH_ARCHIVED_DESC"
+					label="JFIELD_PLG_SEARCH_ARCHIVED_LABEL"
+				>
+					<option value="1">JON</option>
+					<option value="0">JOFF</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

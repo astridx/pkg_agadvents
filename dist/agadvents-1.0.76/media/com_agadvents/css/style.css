@@ -1,0 +1,7 @@
+canvas {
+    pointer-events: none;       /* make the canvas transparent to the mouse - needed since canvas is position infront of image */
+    position: absolute;
+}
+.venoframe {
+	padding: 1%!important;
+}

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="component" version="3.7" method="upgrade">
+	<name>com_agadvents</name>
+	<author>Astrid Günther</author>
+	<creationDate>##DATE##</creationDate>
+	<copyright>(C) ##YEAR## Astrid Günther. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>##VERSION##</version>
+	<description>COM_AGADVENTS_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+
+	<install>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/install.mysql.sql</file>
+		</sql>
+	</install>
+	<uninstall>
+		<sql>
+			<file charset="utf8" driver="mysql">sql/uninstall.mysql.sql</file>
+		</sql>
+	</uninstall>
+
+	<files folder="components/com_agadvents">
+		##FRONTEND_COMPONENT_FILES##
+	</files>
+	<languages folder="language">
+		##FRONTEND_LANGUAGE_FILES##
+	</languages>
+    <media folder="media/com_agadvents" destination="com_agadvents">
+		##MEDIA_FILES##
+    </media>
+	<administration>
+		<menu img="class:agadvents">com_agadvents</menu>
+		<submenu>
+			<!--
+				Note that all & must be escaped to &amp; for the file to be valid
+				XML and be parsed by the installer
+			-->
+			<menu
+				link="option=com_agadvents"
+				view="agadvents"
+				img="class:agadvents"
+				alt="Agadvents/Links"
+			>
+				com_agadvents_links
+			</menu>
+			<menu
+				link="option=com_categories&amp;extension=com_agadvents"
+				view="categories"
+				img="class:agadvents-cat"
+				alt="Agadvents/Categories"
+			>
+				com_agadvents_categories
+			</menu>
+		</submenu>
+		<files folder="administrator/components/com_agadvents">
+			##BACKEND_COMPONENT_FILES##
+		</files>
+		<languages folder="administrator/language">
+			##BACKEND_LANGUAGE_FILES##
+		</languages>
+	</administration>
+</extension>
+

@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="utf-8"?>
+<form>
+	<fieldset addfieldpath="/administrator/components/com_categories/models/fields">
+
+		<field
+			name="id"
+			type="hidden"
+			label="AGADVENT_ID_LABEL"
+			readonly="true"
+			required="true"
+			size="10"
+			default="0"
+		/>
+		<field
+			id="contenthistory"
+			name="contenthistory"
+			type="contenthistory"
+			data-typeAlias="com_agadvents.agadvent"
+			label="JTOOLBAR_VERSIONS"
+		/>
+		<field
+			name="title"
+			type="text"
+			description="COM_AGADVENTS_FIELD_TITLE_DESC"
+			label="JGLOBAL_TITLE"
+			required="true"
+			size="30"
+		/>
+		<field
+			name="alias"
+			type="text"
+			description="COM_AGADVENTS_FIELD_ALIAS_DESC"
+			label="JFIELD_ALIAS_LABEL"
+			hint="JFIELD_ALIAS_PLACEHOLDER"
+			size="45"
+		/>
+		<field
+			name="number"
+			type="integer"
+			label="COM_AGADVENTS_FIELD_NUMBER_LABEL"
+			description="COM_AGADVENTS_FIELD_NUMBER_DESC"
+			first="1"
+			last="24"
+			step="1"
+		/>
+		<field
+			name="begin"
+			type="calendar"
+			label="COM_AGADVENTS_FIELD_BEGIN_LABEL"
+			description="COM_AGADVENTS_FIELD_BEGIN_DESC"
+			size="22"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+		<field
+			name="ende"
+			type="calendar"
+			label="COM_AGADVENTS_FIELD_ENDE_LABEL"
+			description="COM_AGADVENTS_FIELD_ENDE_DESC"
+			size="22"
+			format="%Y-%m-%d %H:%M:%S"
+			filter="user_utc"
+		/>
+		<field
+			name="content"
+			type="editor"
+			height="100"
+			buttons="true"
+			hide="pagebreak,readmore"
+			filter="safehtml"
+			label="COM_AGADVENTS_FIELD_CONTENT_LABEL"
+			description="COM_AGADVENTS_FIELD_CONTENT_DESC"
+			showon="show_url:0"
+		/>
+		<field
+			name="content_no"
+			type="editor"
+			height="100"
+			buttons="true"
+			hide="pagebreak,readmore"
+			filter="safehtml"
+			label="COM_AGADVENTS_FIELD_CONTENT_NO_LABEL"
+			description="COM_AGADVENTS_FIELD_CONTENT_NO_DESC"
+		/>
+		<field
+			name="description"
+			type="editor"
+			height="50"
+			buttons="true"
+			hide="pagebreak,readmore"
+			description="COM_AGADVENTS_FIELD_DESCRIPTION_DESC"
+			filter="safehtml"
+			label="JGLOBAL_DESCRIPTION"
+			asset_id="com_agadvents"
+		/>
+		<field
+			name="state"
+			type="list"
+			default="1"
+			description="JFIELD_PUBLISHED_DESC"
+			label="JSTATUS"
+			size="1"
+		>
+			<option value="1">JPUBLISHED</option>
+			<option value="0">JUNPUBLISHED</option>
+		</field>
+		<field name="catid" type="categoryedit"
+			description="COM_AGADVENTS_FIELD_CATEGORY_DESC"
+			extension="com_agadvents"
+			label="JCATEGORY"
+			required="true"
+		/>
+		<field
+			name="show_url"
+			type="radio"
+			class="btn-group btn-group-yesno"
+			default="0"
+			label="COM_AGADVENTS_FIELD_SHOWURL_LABEL"
+			description="COM_AGADVENTS_FIELD_SHOWURL_DESC">
+			<option value="1">JYES</option>
+			<option value="0">JNO</option>
+		</field>
+		<field
+			name="url"
+			type="url"
+			filter="url"
+			description="COM_AGADVENTS_FIELD_URL_DESC"
+			label="COM_AGADVENTS_FIELD_URL_LABEL"
+			size="45"
+			showon="show_url:1"
+		/>
+		<field
+			name="language"
+			type="contentlanguage"
+			label="JFIELD_LANGUAGE_LABEL"
+			description="JFIELD_LANGUAGE_DESC"
+			class="inputbox">
+			<option value="*">JALL</option>
+		</field>
+		<field name="tags"
+			type="tag"
+			label="JTAG"
+			description="JTAG_DESC"
+			class="inputbox"
+			multiple="true"
+		/>
+		<field
+			name="version_note"
+			type="text"
+			label="JGLOBAL_FIELD_VERSION_NOTE_LABEL"
+			description="JGLOBAL_FIELD_VERSION_NOTE_DESC"
+			class="inputbox"
+			size="45"
+			labelclass="control-label"
+		/>
+		<field
+			name="captcha"
+			type="captcha"
+			label="COM_AGADVENTS_CAPTCHA_LABEL"
+			description="COM_AGADVENTS_CAPTCHA_DESC"
+			validate="captcha"
+			namespace="agadvent"
+		/>
+		<field
+			name="cords"
+			type="text"
+			class="readonly"
+			size="40"
+			default="0,0,0,0"
+			label="COM_AGADVENTS_FIELD_CORDS_LABEL"
+			description="COM_AGADVENTS_FIELD_CORDS_DESC"
+			readonly="true"
+		/>
+		<field
+			name="cords_hidden"
+			type="hidden"
+			default="0,0,0,0"
+		/>
+
+	</fieldset>
+	<fields name="metadata">
+		<fieldset name="jmetadata"
+			label="JGLOBAL_FIELDSET_METADATA_OPTIONS">
+
+				<field
+					name="robots"
+					type="hidden"
+					filter="unset"
+					label="JFIELD_METADATA_ROBOTS_LABEL"
+					description="JFIELD_METADATA_ROBOTS_DESC"
+					labelclass="control-label"
+					>
+					<option value="">JGLOBAL_USE_GLOBAL</option>
+					<option value="index, follow">JGLOBAL_INDEX_FOLLOW</option>
+					<option value="noindex, follow">JGLOBAL_NOINDEX_FOLLOW</option>
+					<option value="index, nofollow">JGLOBAL_INDEX_NOFOLLOW</option>
+					<option value="noindex, nofollow">JGLOBAL_NOINDEX_NOFOLLOW</option>
+				</field>
+				<field
+					name="author"
+					type="hidden"
+					filter="unset"
+					label="JAUTHOR"
+					description="JFIELD_METADATA_AUTHOR_DESC"
+					size="20"
+					labelclass="control-label"
+				/>
+				<field name="rights"
+					type="hidden"
+					label="JFIELD_META_RIGHTS_LABEL"
+					filter="unset"
+					description="JFIELD_META_RIGHTS_DESC"
+					required="false"
+					labelclass="control-label"
+				/>
+				<field name="xreference"
+					type="hidden"
+					filter="unset"
+					label="COM_CONTENT_FIELD_XREFERENCE_LABEL"
+					description="COM_CONTENT_FIELD_XREFERENCE_DESC"
+					class="inputbox"
+					size="20"
+					labelclass="control-label"
+				/>
+
+		</fieldset>
+	</fields>
+</form>

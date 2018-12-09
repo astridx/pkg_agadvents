@@ -1,0 +1,46 @@
+Agadvent Changelog
+-----------------
+
+v1.00
+ - Version with Jcrop
+v1.01
+ - Language Strings
+v1.02
+  - change default value of cord in install.sql
+  - add language string COM_AGADVENTS_ADMIN_VIEW_CORDS_MISSING_IMAGE
+  - option icon entfernt
+  - correct an error in tags display
+  - add option for hiding heading of an agadvent item
+  - add decription in edit cords, because jce editor need an editor :(
+v1.03 (23.08.2017)
+  - Update Venobox from 1.73 to 1.8
+  - add option for width and height of venobox
+v1.04 (23.08.2017)
+  - forgot to add options for width and height in the modul and add support for
+    widht and height of 0
+v1.05 (11.10.2017)
+  - set an padding of 1% to the venoframe
+v1.06
+  - deleted some sample data
+  - changed JURI::root() to JPATHSITE allow_url_fopen=0 is possible
+  - move the change of the clickabel areas into the the agadvent view
+v1.0.7
+  - pop up window background changeable
+v1.0.71
+  - changes in view.html so that module can load in content
+  - add picture without border
+  - Z 28 von /src/components/com_agadvents/views/imagemap/tmpl/default.php
+    $(document).ready() in $(window).load() so that hover will dispay immediately
+
+
+
+todo
+I have three remarks/questions
+1) When you are in the editor for an AGadvent, it is not possible to use the 'save a copy' button, because the unique identifier (1-24) remains the same
+2) I have had difficulties in saving the hours and minutes of the start and end dates. Mostly I had to do it twice to get it right, since on saving once 00:00:00 switched back to e.g. 21:45:00, the time I created the agadvent.
+3) I cannot get centered the main calendar image, the one with the stars. Is there a way to do this without changing the source code?
+4) alt im map tag nicht zu description sondern auch zum titel leiten.
+faq
+ - sticky top menu
+   .vbox-close { margin-top:20%; }
+ - special modul in sidebar - external link

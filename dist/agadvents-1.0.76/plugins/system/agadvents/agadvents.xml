@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension version="3.7" type="plugin" group="system" method="upgrade">
+	<name>plg_system_agadvents</name>
+	<author>Astrid Günther</author>
+	<creationDate>2018-12-09</creationDate>
+	<copyright>(C) 2018 Astrid Günther. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>1.0.76</version>
+	<description>PLG_SYSTEM_AGADVENTS_XML_DESCRIPTION</description>
+	<files>
+		<file plugin="agadvents">agadvents.php</file>
+<file>agadvents.xml</file>
+	</files>
+	<languages folder="administrator/language">
+		<language tag="de-DE">de-DE/de-DE.plg_system_agadvents.ini</language>
+<language tag="de-DE">de-DE/de-DE.plg_system_agadvents.sys.ini</language>
+<language tag="en-GB">en-GB/en-GB.plg_system_agadvents.sys.ini</language>
+<language tag="en-GB">en-GB/en-GB.plg_system_agadvents.ini</language>
+	</languages>
+</extension>
