@@ -96,7 +96,7 @@ class AgadventsViewAgadvent extends JViewLegacy
 		// If an existing item, can save to a copy.
 		if (!$isNew && (count($user->getAuthorisedCategories('com_agadvents', 'core.create')) > 0))
 		{
-			JToolbarHelper::save2copy('agadvent.save2copy');
+			//JToolbarHelper::save2copy('agadvent.save2copy');
 		}
 		if (empty($this->item->id))
 		{

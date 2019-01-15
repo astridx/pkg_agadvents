@@ -2,12 +2,12 @@
 <extension type="component" version="3.7" method="upgrade">
 	<name>com_agadvents</name>
 	<author>Astrid Günther</author>
-	<creationDate>2018-12-09</creationDate>
-	<copyright>(C) 2018 Astrid Günther. All rights reserved.</copyright>
+	<creationDate>2019-01-15</creationDate>
+	<copyright>(C) 2019 Astrid Günther. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@astrid-guenther.de</authorEmail>
 	<authorUrl>www.astrid-guenther.de</authorUrl>
-	<version>1.0.76</version>
+	<version>1.0.8</version>
 	<description>COM_AGADVENTS_XML_DESCRIPTION</description>
 	<scriptfile>script.php</scriptfile>
 
