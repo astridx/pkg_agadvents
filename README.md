@@ -103,7 +103,7 @@ If you enable this extension, you can use the Joomla statistics in this extensio
 
 
 You may be wondering why I have so many plugins integrated into this little 
-calendar. Very easily: I used this extension to learn many Joomla 3 functions. 
+extension. Very easily: I used this extension to learn many Joomla 3 functions. 
 
 # FAQ
 
