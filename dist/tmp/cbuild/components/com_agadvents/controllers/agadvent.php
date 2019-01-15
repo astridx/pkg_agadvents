@@ -316,6 +316,7 @@ class AgadventsControllerAgadvent extends JControllerForm
 		if ($link)
 		{
 			$modelLink->hit($id);
+
 			// 301 = Moved Permanently
 			JFactory::getApplication()->redirect($link, 301);
 		}

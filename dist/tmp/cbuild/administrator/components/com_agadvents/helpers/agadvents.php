@@ -16,8 +16,7 @@ defined('_JEXEC') or die;
  * @since  1.6
  */
 class AgadventsHelper extends JHelperContent
-	{
-
+{
 	/**
 	 * Configure the Linkbar.
 	 *
@@ -83,16 +82,20 @@ class AgadventsHelper extends JHelperContent
 				if ($agadvent->state == 1)
 				{
 					$item->count_published = $agadvent->count;
-				} elseif ($agadvent->state == 0)
+				}
+				elseif ($agadvent->state == 0)
 				{
 					$item->count_unpublished = $agadvent->count;
-				} elseif ($agadvent->state == 2)
+				}
+				elseif ($agadvent->state == 2)
 				{
 					$item->count_archived = $agadvent->count;
-				} elseif ($agadvent->state == -2)
+				}
+				elseif ($agadvent->state == -2)
 				{
 					$item->count_trashed = $agadvent->count;
 				}
+				
 			}
 		}
 

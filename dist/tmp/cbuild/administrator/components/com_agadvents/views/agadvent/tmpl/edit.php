@@ -74,12 +74,12 @@ $tmpl    = $isModal || $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=c
 					?>
 					<?php if ($c->getParams()->get('image')) : ?>
 						<?php
-							$imagedata = getimagesize(JPATH_SITE .'/'. $c->getParams()->get('image'));
+							$imagedata = getimagesize(JPATH_SITE . '/' . $c->getParams()->get('image'));
 							echo JText::_('COM_AGADVENTS_ADMIN_VIEW_IMAGE_WIDTH') . ' ' . $imagedata[0] . 'px ';
 							echo ' ' . JText::_('COM_AGADVENTS_ADMIN_VIEW_IMAGE_HEIGHT') . ' ' . $imagedata[1] . 'px ';
 						?>
 						<img
-							src="<?php echo JURI::root() .'/'. $c->getParams()->get('image'); ?>"
+							src="<?php echo JURI::root() . '/' . $c->getParams()->get('image'); ?>"
 							id="target"
 						>
 					<?php else : ?>

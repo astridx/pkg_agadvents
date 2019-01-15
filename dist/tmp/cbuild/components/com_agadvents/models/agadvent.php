@@ -97,7 +97,7 @@ class AgadventsModelAgadvent extends JModelItem
 		$up = new JDate($this->_item->publish_up);
 		$down = new JDate($this->_item->publish_down);
 
-		if(($date > $up || $this->_item->publish_up == '0000-00-00 00:00:00') && ($date < $down || $this->_item->publish_down == '0000-00-00 00:00:00') && $this->_item->state == 1)
+		if (($date > $up || $this->_item->publish_up == '0000-00-00 00:00:00') && ($date < $down || $this->_item->publish_down == '0000-00-00 00:00:00') && $this->_item->state == 1)
 		{
 			return $this->_item;
 		}
@@ -105,6 +105,7 @@ class AgadventsModelAgadvent extends JModelItem
 		{
 			return JError::raiseError(404, 'Item not found.');
 		}
+		
 	}
 
 	/**
