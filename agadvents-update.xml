@@ -34,7 +34,7 @@
         <maintainer>Astrid Günther</maintainer>
         <maintainerurl>https://astrid-guenther.de</maintainerurl>
         <targetplatform name="joomla" version="3.*"/>
-    </update>
+    </update> 
     <update>
         <name>pkg_agadvents</name>
         <description>pkg_agadvents</description>
