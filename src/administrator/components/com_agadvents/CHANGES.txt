@@ -31,7 +31,12 @@ v1.0.71
   - add picture without border
   - Z 28 von /src/components/com_agadvents/views/imagemap/tmpl/default.php
     $(document).ready() in $(window).load() so that hover will dispay immediately
+v1.0.8
+ - make component workable without credentials
 
+2.0.0
+ - test free component
+ - deleted save as copy
 
 
 todo

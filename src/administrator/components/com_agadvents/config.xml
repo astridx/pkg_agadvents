@@ -1,469 +1,471 @@
 <?xml version="1.0" encoding="utf-8"?>
 <config>
-	<fieldset name="component"
-				  label="COM_AGADVENTS_COMPONENT_LABEL"
-				  description="COM_AGADVENTS_COMPONENT_DESC"
-	>
-		<field
-			name="jqueryversion"
-			type="radio"
-			class="btn-group btn-group-yesno"
-			default="advanced"
-			label="COM_AGADVENTS_JQUERYVERSION_LABEL"
-			description="COM_AGADVENTS_JQUERYVERSION_DESC">
-			<option value="advanced">advanced</option>
-			<option value="simple">simple</option>
-		</field>
-		<field
-			name="clickableareas"
-			type="list"
-			default="fix"
-			label="COM_AGADVENTS_CLICKABLE_AREAS_LABEL"
-			description="COM_AGADVENTS_CLICKABLE_AREAS_DESC"
-			showon="jqueryversion:advanced"
-		>
-			<option value="donot">COM_AGADVENTS_DO_NOT_HIGHLIGHT_CLICKABLE_AREAS</option>
-			<option value="hover">COM_AGADVENTS_HIGHLIGHT_CLICKABLE_AREAS_ON_HOVER</option>
-			<option value="fix">COM_AGADVENTS_DRAW_CLICKABLE_AREAS</option>
-		</field>
-		<field type="spacer" name="agadventnotaktivcontent" hr="true" />
-		<field
-			name="shownotaktiv"
-			type="radio"
-			class="btn-group btn-group-yesno"
-			default="0"
-			label="COM_AGADVENTS_SHOWNOTAKTIV_LABEL"
-			description="COM_AGADVENTS_SHOWNOTAKTIV_DESC">
-			<option value="1">JYES</option>
-			<option value="0">JNO</option>
-		</field>
-		<field type="spacer" name="agadventtest" hr="true" />
-		<field
-			name="test"
-			type="radio"
-			class="btn-group btn-group-yesno"
-			default="0"
-			label="COM_AGADVENTS_TEST_LABEL"
-			description="COM_AGADVENTS_TEST_DESC">
-			<option value="1">JYES</option>
-			<option value="0">JNO</option>
-		</field>
-		<field type="spacer" name="agadventpopup" hr="true" />
-		<field
-			name="popup"
-			type="radio"
-			class="btn-group btn-group-yesno"
-			default="0"
-			label="COM_AGADVENTS_POPUP_LABEL"
-			description="COM_AGADVENTS_POPUP_DESC">
-			<option value="1">JYES</option>
-			<option value="0">JNO</option>
-		</field>
+    <fieldset   
+        name="component"
+        label="COM_AGADVENTS_COMPONENT_LABEL"
+        description="COM_AGADVENTS_COMPONENT_DESC"
+    >
+        <field
+            name="jqueryversion"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="advanced"
+            label="COM_AGADVENTS_JQUERYVERSION_LABEL"
+            description="COM_AGADVENTS_JQUERYVERSION_DESC">
+            <option value="advanced">advanced</option>
+            <option value="simple">simple</option>
+        </field>
+        <field
+            name="clickableareas"
+            type="list"
+            default="fix"
+            label="COM_AGADVENTS_CLICKABLE_AREAS_LABEL"
+            description="COM_AGADVENTS_CLICKABLE_AREAS_DESC"
+            showon="jqueryversion:advanced"
+        >
+            <option value="donot">COM_AGADVENTS_DO_NOT_HIGHLIGHT_CLICKABLE_AREAS</option>
+            <option value="hover">COM_AGADVENTS_HIGHLIGHT_CLICKABLE_AREAS_ON_HOVER</option>
+            <option value="fix">COM_AGADVENTS_DRAW_CLICKABLE_AREAS</option>
+        </field>
+        <field type="spacer" name="agadventnotaktivcontent" hr="true" />
+        <field
+            name="shownotaktiv"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="0"
+            label="COM_AGADVENTS_SHOWNOTAKTIV_LABEL"
+            description="COM_AGADVENTS_SHOWNOTAKTIV_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field type="spacer" name="agadventtest" hr="true" />
+        <field
+            name="test"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="0"
+            label="COM_AGADVENTS_TEST_LABEL"
+            description="COM_AGADVENTS_TEST_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field type="spacer" name="agadventpopup" hr="true" />
+        <field
+            name="popup"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="0"
+            label="COM_AGADVENTS_POPUP_LABEL"
+            description="COM_AGADVENTS_POPUP_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
 
-		<field
-			name="popup_width"
-			type="integer"
-			first="0"
-			last="1000"
-			step="10"
-			default="0"
-			label="COM_AGADVENTS_POPUP_WIDTH_LABEL"
-			description="COM_AGADVENTS_POPUP_WIDTH_DESC"
-			showon="popup:1"
-		/>
+        <field
+            name="popup_width"
+            type="integer"
+            first="0"
+            last="1000"
+            step="10"
+            default="0"
+            label="COM_AGADVENTS_POPUP_WIDTH_LABEL"
+            description="COM_AGADVENTS_POPUP_WIDTH_DESC"
+            showon="popup:1"
+        />
 
-		<field
-			name="popup_height"
-			type="integer"
-			first="0"
-			last="1000"
-			step="10"
-			default="0"
-			label="COM_AGADVENTS_POPUP_HEIGHT_LABEL"
-			description="COM_AGADVENTS_POPUP_HEIGHT_DESC"
-			showon="popup:1"
-		/>
+        <field
+            name="popup_height"
+            type="integer"
+            first="0"
+            last="1000"
+            step="10"
+            default="0"
+            label="COM_AGADVENTS_POPUP_HEIGHT_LABEL"
+            description="COM_AGADVENTS_POPUP_HEIGHT_DESC"
+            showon="popup:1"
+        />
 
-		<field
-			name="popup_background_color"
-			type="color"
-			default="#fff"
-			label="COM_AGADVENTS_POPUP_BACKGROUNDCOLOR_LABEL"
-			description="COM_AGADVENTS_POPUP_BACKGROUNDCOLOR_DESC"
-			showon="popup:1"
-		/>
+        <field
+            name="popup_background_color"
+            type="color"
+            default="#fff"
+            label="COM_AGADVENTS_POPUP_BACKGROUNDCOLOR_LABEL"
+            description="COM_AGADVENTS_POPUP_BACKGROUNDCOLOR_DESC"
+            showon="popup:1"
+        />
 
-	</fieldset>
+    </fieldset>
 
-	<fieldset name="component_single_view"
-			  label="COM_AGADVENTS_COMPONENT_SINGLEVIEW_LABEL"
-			  description="COM_AGADVENTS_COMPONENT_SINGLEVIEW_DESC"
-	>
+    <fieldset name="component_single_view"
+                  label="COM_AGADVENTS_COMPONENT_SINGLEVIEW_LABEL"
+                  description="COM_AGADVENTS_COMPONENT_SINGLEVIEW_DESC"
+    >
 
-		<field
-			name="captcha"
-			type="plugins"
-			label="COM_AGADVENTS_FIELD_CAPTCHA_LABEL"
-			description="COM_AGADVENTS_FIELD_CAPTCHA_DESC"
-			default=""
-			folder="captcha"
-			filter="cmd"
-		>
-			<option value="">JOPTION_USE_DEFAULT</option>
-			<option value="0">JOPTION_DO_NOT_USE</option>
-		</field>
+        <field
+            name="captcha"
+            type="plugins"
+            label="COM_AGADVENTS_FIELD_CAPTCHA_LABEL"
+            description="COM_AGADVENTS_FIELD_CAPTCHA_DESC"
+            default=""
+            folder="captcha"
+            filter="cmd"
+        >
+            <option value="">JOPTION_USE_DEFAULT</option>
+            <option value="0">JOPTION_DO_NOT_USE</option>
+        </field>
 
-		<field
-			name="target"
-			type="list"
-			default="0"
-			description="COM_AGADVENTS_FIELD_TARGET_DESC"
-			label="COM_AGADVENTS_FIELD_TARGET_LABEL"
-		>
-			<option value="0">JBROWSERTARGET_PARENT</option>
-			<option value="1">JBROWSERTARGET_NEW</option>
-			<option value="2">JBROWSERTARGET_POPUP</option>
-			<option value="3">JBROWSERTARGET_MODAL</option>
-		</field>
+        <field
+            name="target"
+            type="list"
+            default="0"
+            description="COM_AGADVENTS_FIELD_TARGET_DESC"
+            label="COM_AGADVENTS_FIELD_TARGET_LABEL"
+        >
+            <option value="0">JBROWSERTARGET_PARENT</option>
+            <option value="1">JBROWSERTARGET_NEW</option>
+            <option value="2">JBROWSERTARGET_POPUP</option>
+            <option value="3">JBROWSERTARGET_MODAL</option>
+        </field>
 
-		<field
-			name="save_history"
-			type="radio"
-			class="btn-group btn-group-yesno"
-			default="0"
-			label="JGLOBAL_SAVE_HISTORY_OPTIONS_LABEL"
-			description="JGLOBAL_SAVE_HISTORY_OPTIONS_DESC"
-		>
-			<option value="1">JYES</option>
-			<option value="0">JNO</option>
-		</field>
-		<field
-			name="history_limit"
-			type="text"
-			filter="integer"
-			label="JGLOBAL_HISTORY_LIMIT_OPTIONS_LABEL"
-			description="JGLOBAL_HISTORY_LIMIT_OPTIONS_DESC"
-			default="5"
-		/>
+        <field
+            name="save_history"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="0"
+            label="JGLOBAL_SAVE_HISTORY_OPTIONS_LABEL"
+            description="JGLOBAL_SAVE_HISTORY_OPTIONS_DESC"
+        >
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
+        <field
+            name="history_limit"
+            type="text"
+            filter="integer"
+            label="JGLOBAL_HISTORY_LIMIT_OPTIONS_LABEL"
+            description="JGLOBAL_HISTORY_LIMIT_OPTIONS_DESC"
+            default="5"
+        />
 
-		<field	name="count_clicks" type="radio"
-				class="btn-group btn-group-yesno"
-				default="1"
-				label="COM_AGADVENTS_FIELD_COUNTCLICKS_LABEL"
-				description="COM_AGADVENTS_FIELD_COUNTCLICKS_DESC">
-			<option value="1">JYES</option>
-			<option value="0">JNO</option>
-		</field>
+        <field	name="count_clicks" type="radio"
+                        class="btn-group btn-group-yesno"
+                        default="1"
+                        label="COM_AGADVENTS_FIELD_COUNTCLICKS_LABEL"
+                        description="COM_AGADVENTS_FIELD_COUNTCLICKS_DESC">
+            <option value="1">JYES</option>
+            <option value="0">JNO</option>
+        </field>
 
-		<field
-			name="show_title"
-			type="radio"
-			label="JGLOBAL_SHOW_TITLE_LABEL"
-			description="JGLOBAL_SHOW_TITLE_DESC"
-			class="btn-group btn-group-yesno"
-			default="1"
-			>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field
+            name="show_title"
+            type="radio"
+            label="JGLOBAL_SHOW_TITLE_LABEL"
+            description="JGLOBAL_SHOW_TITLE_DESC"
+            class="btn-group btn-group-yesno"
+            default="1"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field
-			id="show_tags"
-			name="show_tags"
-			type="radio"
-			class="btn-group btn-group-yesno"
-			default="1"
-			label="COM_AGADVENTS_FIELD_SHOW_TAGS_LABEL"
-			description="COM_AGADVENTS_FIELD_SHOW_TAGS_DESC">
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field
+            id="show_tags"
+            name="show_tags"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="COM_AGADVENTS_FIELD_SHOW_TAGS_LABEL"
+            description="COM_AGADVENTS_FIELD_SHOW_TAGS_DESC">
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-	</fieldset>
+    </fieldset>
 
-	<fieldset name="category"
-			  label="JCATEGORY"
-			  description="COM_AGADVENTS_CATEGORY_DESC"
-	>
+    <fieldset name="category"
+                  label="JCATEGORY"
+                  description="COM_AGADVENTS_CATEGORY_DESC"
+    >
 
-		<field
-			name="category_layout" type="componentlayout"
-			label="JGLOBAL_FIELD_LAYOUT_LABEL"
-			description="JGLOBAL_FIELD_LAYOUT_DESC"
-			menuitems="true"
-			extension="com_agadvents"
-			view="category"
-		/>
+        <field
+            name="category_layout" type="componentlayout"
+            label="JGLOBAL_FIELD_LAYOUT_LABEL"
+            description="JGLOBAL_FIELD_LAYOUT_DESC"
+            menuitems="true"
+            extension="com_agadvents"
+            view="category"
+        />
 
-		<field name="show_category_title" type="radio"
-			   class="btn-group btn-group-yesno"
-			   label="JGLOBAL_SHOW_CATEGORY_TITLE"
-			   description="JGLOBAL_SHOW_CATEGORY_TITLE_DESC"
-			   default="1"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_category_title" type="radio"
+                       class="btn-group btn-group-yesno"
+                       label="JGLOBAL_SHOW_CATEGORY_TITLE"
+                       description="JGLOBAL_SHOW_CATEGORY_TITLE_DESC"
+                       default="1"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_description"
-			   type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   label="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_LABEL"
-			   description="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_DESC">
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_description"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_LABEL"
+                       description="JGLOBAL_SHOW_CATEGORY_DESCRIPTION_DESC">
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_description_image"
-			   type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   label="JGLOBAL_SHOW_CATEGORY_IMAGE_LABEL"
-			   description="JGLOBAL_SHOW_CATEGORY_IMAGE_DESC">
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_description_image"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="JGLOBAL_SHOW_CATEGORY_IMAGE_LABEL"
+                       description="JGLOBAL_SHOW_CATEGORY_IMAGE_DESC">
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="maxLevel" type="list"
-			   description="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_DESC"
-			   label="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_LABEL"
-			   default="-1"
-		>
-			<option value="0">JNONE</option>
-			<option value="-1">JALL</option>
-			<option value="1">J1</option>
-			<option value="2">J2</option>
-			<option value="3">J3</option>
-			<option value="4">J4</option>
-			<option value="5">J5</option>
-		</field>
+        <field name="maxLevel" type="list"
+                       description="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_DESC"
+                       label="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_LABEL"
+                       default="-1"
+        >
+            <option value="0">JNONE</option>
+            <option value="-1">JALL</option>
+            <option value="1">J1</option>
+            <option value="2">J2</option>
+            <option value="3">J3</option>
+            <option value="4">J4</option>
+            <option value="5">J5</option>
+        </field>
 
-		<field name="show_empty_categories" type="radio"
-			   class="btn-group btn-group-yesno"
-			   label="JGLOBAL_SHOW_EMPTY_CATEGORIES_LABEL"
-			   description="COM_AGADVENTS_SHOW_EMPTY_CATEGORIES_DESC"
-			   default="0"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_empty_categories" type="radio"
+                       class="btn-group btn-group-yesno"
+                       label="JGLOBAL_SHOW_EMPTY_CATEGORIES_LABEL"
+                       description="COM_AGADVENTS_SHOW_EMPTY_CATEGORIES_DESC"
+                       default="0"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_subcat_desc" type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   description="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_DESC"
-			   label="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_LABEL"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_subcat_desc" type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_DESC"
+                       label="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_LABEL"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_cat_num_links" type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   description="COM_AGADVENTS_FIELD_CONFIG_CAT_SHOWNUMBERS_DESC"
-			   label="COM_AGADVENTS_FIELD_CONFIG_CAT_SHOWNUMBERS_LABEL"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_cat_num_links" type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="COM_AGADVENTS_FIELD_CONFIG_CAT_SHOWNUMBERS_DESC"
+                       label="COM_AGADVENTS_FIELD_CONFIG_CAT_SHOWNUMBERS_LABEL"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_cat_tags" type="radio"
-			   label="COM_AGADVENTS_FIELD_SHOW_CAT_TAGS_LABEL"
-			   description="COM_AGADVENTS_FIELD_SHOW_CAT_TAGS_DESC"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_cat_tags" type="radio"
+                       label="COM_AGADVENTS_FIELD_SHOW_CAT_TAGS_LABEL"
+                       description="COM_AGADVENTS_FIELD_SHOW_CAT_TAGS_DESC"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-	</fieldset>
+    </fieldset>
 
-	<fieldset name="categories"
-			  label="JCATEGORIES"
-			  description="COM_AGADVENTS_CATEGORIES_DESC"
-	>
-		<field name="show_base_description" type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   label="JGLOBAL_FIELD_SHOW_BASE_DESCRIPTION_LABEL"
-			   description="JGLOBAL_FIELD_SHOW_BASE_DESCRIPTION_DESC"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+    <fieldset name="categories"
+                  label="JCATEGORIES"
+                  description="COM_AGADVENTS_CATEGORIES_DESC"
+    >
+        <field name="show_base_description" type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="JGLOBAL_FIELD_SHOW_BASE_DESCRIPTION_LABEL"
+                       description="JGLOBAL_FIELD_SHOW_BASE_DESCRIPTION_DESC"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="maxLevelcat" type="list"
-			   default="-1"
-			   description="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_DESC"
-			   label="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_LABEL"
-		>
-			<option value="-1">JALL</option>
-			<option value="1">J1</option>
-			<option value="2">J2</option>
-			<option value="3">J3</option>
-			<option value="4">J4</option>
-			<option value="5">J5</option>
+        <field name="maxLevelcat" type="list"
+                       default="-1"
+                       description="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_DESC"
+                       label="JGLOBAL_MAXIMUM_CATEGORY_LEVELS_LABEL"
+        >
+            <option value="-1">JALL</option>
+            <option value="1">J1</option>
+            <option value="2">J2</option>
+            <option value="3">J3</option>
+            <option value="4">J4</option>
+            <option value="5">J5</option>
 
-		</field>
-		<field name="show_empty_categories_cat" type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="0"
-			   label="JGLOBAL_SHOW_EMPTY_CATEGORIES_LABEL"
-			   description="COM_AGADVENTS_SHOW_EMPTY_CATEGORIES_DESC"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        </field>
+        <field name="show_empty_categories_cat" type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="0"
+                       label="JGLOBAL_SHOW_EMPTY_CATEGORIES_LABEL"
+                       description="COM_AGADVENTS_SHOW_EMPTY_CATEGORIES_DESC"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_subcat_desc_cat" type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   description="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_DESC"
-			   label="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_LABEL"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_subcat_desc_cat" type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_DESC"
+                       label="JGLOBAL_SHOW_SUBCATEGORIES_DESCRIPTION_LABEL"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_cat_num_links_cat" type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   description="COM_AGADVENTS_FIELD_CONFIG_CAT_SHOWNUMBERS_DESC"
-			   label="COM_AGADVENTS_FIELD_CONFIG_CAT_SHOWNUMBERS_LABEL"
-		>
+        <field name="show_cat_num_links_cat" type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="COM_AGADVENTS_FIELD_CONFIG_CAT_SHOWNUMBERS_DESC"
+                       label="COM_AGADVENTS_FIELD_CONFIG_CAT_SHOWNUMBERS_LABEL"
+        >
 
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-	</fieldset>
+    </fieldset>
 
 
-	<fieldset name="list_layout"
-			  label="JGLOBAL_LIST_LAYOUT_OPTIONS"
-			  description="COM_AGADVENTS_LIST_LAYOUT_DESC"
-	>
+    <fieldset name="list_layout"
+                  label="JGLOBAL_LIST_LAYOUT_OPTIONS"
+                  description="COM_AGADVENTS_LIST_LAYOUT_DESC"
+    >
 
-		<field
-			name="filter_field"
-			type="list"
-			default="1"
-			description="JGLOBAL_FILTER_FIELD_DESC"
-			label="JGLOBAL_FILTER_FIELD_LABEL"
-		>
-			<option value="1">JSHOW</option>
-			<option value="hide">JHIDE</option>
-		</field>
+        <field
+            name="filter_field"
+            type="list"
+            default="1"
+            description="JGLOBAL_FILTER_FIELD_DESC"
+            label="JGLOBAL_FILTER_FIELD_LABEL"
+        >
+            <option value="1">JSHOW</option>
+            <option value="hide">JHIDE</option>
+        </field>
 
-		<field
-			name="show_pagination_limit"
-			type="radio" default="1"
-			class="btn-group btn-group-yesno"
-			label="JGLOBAL_DISPLAY_SELECT_LABEL"
-			description="JGLOBAL_DISPLAY_SELECT_DESC">
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field
+            name="show_pagination_limit"
+            type="radio" default="1"
+            class="btn-group btn-group-yesno"
+            label="JGLOBAL_DISPLAY_SELECT_LABEL"
+            description="JGLOBAL_DISPLAY_SELECT_DESC">
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_headings" type="radio"
-			   default="1"
-			   class="btn-group btn-group-yesno"
-			   description="JGLOBAL_SHOW_HEADINGS_DESC"
-			   label="JGLOBAL_SHOW_HEADINGS_LABEL"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_headings" type="radio"
+                       default="1"
+                       class="btn-group btn-group-yesno"
+                       description="JGLOBAL_SHOW_HEADINGS_DESC"
+                       label="JGLOBAL_SHOW_HEADINGS_LABEL"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_link_description" type="radio"
-			   default="1"
-			   class="btn-group btn-group-yesno"
-			   description="COM_AGADVENTS_FIELD_CONFIG_LINKDESCRIPTION_DESC"
-			   label="COM_AGADVENTS_FIELD_CONFIG_LINKDESCRIPTION_LABEL"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_link_description" type="radio"
+                       default="1"
+                       class="btn-group btn-group-yesno"
+                       description="COM_AGADVENTS_FIELD_CONFIG_LINKDESCRIPTION_DESC"
+                       label="COM_AGADVENTS_FIELD_CONFIG_LINKDESCRIPTION_LABEL"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_link_hits" type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   description="COM_AGADVENTS_FIELD_CONFIG_HITS_DESC"
-			   label="JGLOBAL_HITS"
-		>
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_link_hits" type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       description="COM_AGADVENTS_FIELD_CONFIG_HITS_DESC"
+                       label="JGLOBAL_HITS"
+        >
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-		<field name="show_pagination"
-			   type="list"
-			   default="2"
-			   label="JGLOBAL_PAGINATION_LABEL"
-			   description="JGLOBAL_PAGINATION_DESC">
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-			<option value="2">JGLOBAL_AUTO</option>
-		</field>
+        <field name="show_pagination"
+                       type="list"
+                       default="2"
+                       label="JGLOBAL_PAGINATION_LABEL"
+                       description="JGLOBAL_PAGINATION_DESC">
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+            <option value="2">JGLOBAL_AUTO</option>
+        </field>
 
-		<field name="show_pagination_results"
-			   type="radio"
-			   class="btn-group btn-group-yesno"
-			   default="1"
-			   label="JGLOBAL_PAGINATION_RESULTS_LABEL"
-			   description="JGLOBAL_PAGINATION_RESULTS_DESC">
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field name="show_pagination_results"
+                       type="radio"
+                       class="btn-group btn-group-yesno"
+                       default="1"
+                       label="JGLOBAL_PAGINATION_RESULTS_LABEL"
+                       description="JGLOBAL_PAGINATION_RESULTS_DESC">
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-	</fieldset>
+    </fieldset>
 
-	<fieldset
-		name="integration"
-		label="JGLOBAL_INTEGRATION_LABEL"
-		description="COM_AGADVENTS_CONFIG_INTEGRATION_SETTINGS_DESC"
-	>
+    <fieldset
+        name="integration"
+        label="JGLOBAL_INTEGRATION_LABEL"
+        description="COM_AGADVENTS_CONFIG_INTEGRATION_SETTINGS_DESC"
+    >
 
-		<field
-			name="show_feed_link"
-			type="radio"
-			class="btn-group btn-group-yesno"
-			default="1"
-			label="JGLOBAL_SHOW_FEED_LINK_LABEL"
-			description="JGLOBAL_SHOW_FEED_LINK_DESC">
-			<option value="1">JSHOW</option>
-			<option value="0">JHIDE</option>
-		</field>
+        <field
+            name="show_feed_link"
+            type="radio"
+            class="btn-group btn-group-yesno"
+            default="1"
+            label="JGLOBAL_SHOW_FEED_LINK_LABEL"
+            description="JGLOBAL_SHOW_FEED_LINK_DESC">
+            <option value="1">JSHOW</option>
+            <option value="0">JHIDE</option>
+        </field>
 
-	</fieldset>
+    </fieldset>
 
-	<fieldset name="permissions"
-			  description="JCONFIG_PERMISSIONS_DESC"
-			  label="JCONFIG_PERMISSIONS_LABEL"
-	>
+    <fieldset name="permissions"
+                  description="JCONFIG_PERMISSIONS_DESC"
+                  label="JCONFIG_PERMISSIONS_LABEL"
+    >
 
-		<field name="rules" type="rules"
-			   component="com_agadvents"
-			   filter="rules"
-			   validate="rules"
-			   label="JCONFIG_PERMISSIONS_LABEL"
-			   section="component"
-		/>
-	</fieldset>
+        <field name="rules" type="rules"
+                       component="com_agadvents"
+                       filter="rules"
+                       validate="rules"
+                       label="JCONFIG_PERMISSIONS_LABEL"
+                       section="component"
+        />
+    </fieldset>
 
-	<fieldset name="credentials"
-			  description="COM_AGADVENTS_ACCESS_UPDATE_DESC"
-			  label="COM_AGADVENTS_ACCESS_UPDATE_LABEL"
-	>
-		<field
-			name="update_credentials_access"
-			type="text"
-			default=""
-			label="COM_AGADVENTS_ACCESS_UPDATE_LABEL"
-			description="COM_AGADVENTS_ACCESS_UPDATE_DESC"
-		/>
-	</fieldset>
+    <fieldset   
+        name="credentials"
+        description="COM_AGADVENTS_ACCESS_UPDATE_DESC"
+        label="COM_AGADVENTS_ACCESS_UPDATE_LABEL"
+    >
+        <field
+            name="update_credentials_access"
+            type="text"
+            default=""
+            label="COM_AGADVENTS_ACCESS_UPDATE_LABEL"
+            description="COM_AGADVENTS_ACCESS_UPDATE_DESC"
+        />
+    </fieldset>
 
 </config>
