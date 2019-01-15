@@ -44,7 +44,7 @@ that you `choose the category` and `save` the item.
 8. Scool to the bottom  
 After you have `choosen the category` and `saved` the item 
 you see the image of the category at the bottom. Now you can 
-select the clickable area with your mouse. 
+select the clickable area with your mouse. You can only choose an area in the shape of an rectangle.
 
 ![b8](https://user-images.githubusercontent.com/9974686/51182080-50888f80-18cd-11e9-9bd6-e5f76055d358.png)
 
@@ -74,7 +74,7 @@ All other options are self-explanatory.
 
 ![b12](https://user-images.githubusercontent.com/9974686/51182072-4feff900-18cd-11e9-9fed-d0293852cc94.png)
 
-15. Open the menu item in front end and you can click the area you choosen in point 8.
+15. Open the menu item in front end and you can click the area you choosen in point 8. The content opens either in a popup or in the content area of your page, depending on what you have selected in the preferences.
 
 ![13](https://user-images.githubusercontent.com/9974686/51182070-4feff900-18cd-11e9-8bc3-3421c5c1d944.png)
 
