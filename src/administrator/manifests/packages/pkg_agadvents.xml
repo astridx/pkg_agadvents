@@ -29,6 +29,6 @@
 		<language tag="de-DE">de-DE/de-DE.pkg_agadvents.sys.ini</language>
 	</languages>
 	<updateservers>
-		<server type="extension" name="Agadvents Update Site">https://raw.githubusercontent.com/astridx/pkg_agsdvents/master/agadvents-update.xml</server>
+		<server type="extension" name="Agadvents Update Site">https://raw.githubusercontent.com/astridx/pkg_agadvents/master/agadvents-update.xml</server>
 	</updateservers>
 </extension>
