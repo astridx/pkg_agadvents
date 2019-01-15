@@ -3,14 +3,7 @@
 
 # Quickstart
 
-1. Install this package via Joomla! installer. You will install six extensions.   
-Component: Agadvents  
-Module: Agadvents  
-Plugin: Button - Agadvents  
-Plugin: Installer - Agadvents  
-Plugin: Search - Agadvents  
-Plugin: Smart Search - Agadvents  
-Plugin: System - Agadvents  
+1. Install this package via Joomla! installer. 
 Please check after the installation, if the menu item for the component is inserted into the menu.
 
 ![b1](https://user-images.githubusercontent.com/9974686/51182088-51b9bc80-18cd-11e9-9786-0fc902cff8fb.png)
