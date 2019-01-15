@@ -9,7 +9,7 @@
             name="jqueryversion"
             type="radio"
             class="btn-group btn-group-yesno"
-            default="advanced"
+            default="simple"
             label="COM_AGADVENTS_JQUERYVERSION_LABEL"
             description="COM_AGADVENTS_JQUERYVERSION_DESC">
             <option value="advanced">advanced</option>
