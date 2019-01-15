@@ -104,6 +104,16 @@ If you enable this extension, you can use the Joomla statistics in this extensio
 
 You may be wondering why I have so many plugins integrated into this little 
 extension. Very easily: I used this extension to learn many Joomla 3 functions. 
+Advent calendar for Joomla! 3.7 with selectable background and freely configurable windows.
+
+- Plugins for statistics, search and smart search are available.
+- The advent calendar can be displayed in a module at any position on the website.
+- The component supports versions, language associations, and custom fields.
+- The content of a advent item will be opened in the content area or in a pop up.
+- Test mode to test individual days in advance.
+- The Advent Calendar can also be used as an image map.
+- Several advent calendars can be active at the same time. So you can display content from a previous year as a kind of archive.
+
 
 # FAQ
 
