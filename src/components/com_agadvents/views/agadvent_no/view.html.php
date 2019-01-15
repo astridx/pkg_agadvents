@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
 /**
  * HTML Agadvent View class for the Agadvents component
  *
- * @since 1.0.0
+ * @since  1.0.0
  */
 class AgadventsViewAgadvent_no extends JViewLegacy
 {
@@ -64,7 +64,7 @@ class AgadventsViewAgadvent_no extends JViewLegacy
 		$style = 'body {'
 			. 'background-color:' . $this->params->get('popup_background_color', '#fff') . ';'
 			. '}';
-		$document->addStyleDeclaration( $style );
+		$document->addStyleDeclaration($style);
 
 		parent::display($tpl);
 	}

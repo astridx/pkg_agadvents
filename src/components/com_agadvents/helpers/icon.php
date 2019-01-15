@@ -21,7 +21,7 @@ class JHtmlIcon
 	 * Create a link to create a new agadvent
 	 *
 	 * @param   mixed  $agadvent  Unused
-	 * @param   mixed  $params   Unused
+	 * @param   mixed  $params    Unused
 	 *
 	 * @return  string
 	 */
@@ -41,8 +41,8 @@ class JHtmlIcon
 	 * Create a link to edit an existing agadvent
 	 *
 	 * @param   object                     $agadvent  Agadvent data
-	 * @param   \Joomla\Registry\Registry  $params   Item params
-	 * @param   array                      $attribs  Unused
+	 * @param   \Joomla\Registry\Registry  $params    Item params
+	 * @param   array                      $attribs   Unused
 	 *
 	 * @return  string
 	 */
