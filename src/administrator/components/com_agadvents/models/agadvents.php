@@ -60,6 +60,7 @@ class AgadventsModelAgadvents extends JModelList
 				'level', 'c.level',
 			);
 			$assoc = JLanguageAssociations::isEnabled();
+
 			if ($assoc)
 			{
 				$config['filter_fields'][] = 'association';

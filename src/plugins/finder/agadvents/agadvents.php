@@ -140,7 +140,7 @@ class PlgFinderAgadvents extends FinderIndexerAdapter
 	public function onFinderAfterSave($context, $row, $isNew)
 	{
 		// We only want to handle agadvents here. We need to handle front end and back end editing.
-		if ($context == 'com_agadvents.agadvent' || $context == 'com_agadvents.form' )
+		if ($context == 'com_agadvents.agadvent' || $context == 'com_agadvents.form')
 		{
 			// Check if the access levels are different.
 			if (!$isNew && $this->old_access != $row->access)

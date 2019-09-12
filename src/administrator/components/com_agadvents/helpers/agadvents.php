@@ -29,21 +29,21 @@ class AgadventsHelper extends JHelperContent
 	public static function addSubmenu($vName = 'agadvents')
 	{
 		JHtmlSidebar::addEntry(
-				JText::_('COM_AGADVENTS_SUBMENU_AGADVENTS'), 'index.php?option=com_agadvents&view=agadvents', $vName == 'agadvents'
+			JText::_('COM_AGADVENTS_SUBMENU_AGADVENTS'), 'index.php?option=com_agadvents&view=agadvents', $vName == 'agadvents'
 		);
 
 		JHtmlSidebar::addEntry(
-				JText::_('COM_AGADVENTS_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&extension=com_agadvents', $vName == 'categories'
+			JText::_('COM_AGADVENTS_SUBMENU_CATEGORIES'), 'index.php?option=com_categories&extension=com_agadvents', $vName == 'categories'
 		);
 
 		if (JComponentHelper::isEnabled('com_fields'))
 		{
 			JHtmlSidebar::addEntry(
-					JText::_('JGLOBAL_FIELDS'), 'index.php?option=com_fields&context=com_agadvents.agadvent', $vName == 'fields.fields'
+				JText::_('JGLOBAL_FIELDS'), 'index.php?option=com_fields&context=com_agadvents.agadvent', $vName == 'fields.fields'
 			);
 
 			JHtmlSidebar::addEntry(
-					JText::_('JGLOBAL_FIELD_GROUPS'), 'index.php?option=com_fields&view=groups&context=com_agadvents.agadvent', $vName == 'fields.groups'
+				JText::_('JGLOBAL_FIELD_GROUPS'), 'index.php?option=com_fields&view=groups&context=com_agadvents.agadvent', $vName == 'fields.groups'
 			);
 		}
 	}
@@ -69,10 +69,10 @@ class AgadventsHelper extends JHelperContent
 			$item->count_published = 0;
 
 			$query = $db->getQuery(true)
-					->select('state, COUNT(*) AS count')
-					->from($db->qn('#__agadvents'))
-					->where($db->qn('catid') . ' = ' . (int) $item->id)
-					->group('state');
+				->select('state, COUNT(*) AS count')
+				->from($db->qn('#__agadvents'))
+				->where($db->qn('catid') . ' = ' . (int) $item->id)
+				->group('state');
 
 			$db->setQuery($query);
 			$agadvents = $db->loadObjectList();
@@ -95,7 +95,6 @@ class AgadventsHelper extends JHelperContent
 				{
 					$item->count_trashed = $agadvent->count;
 				}
-				
 			}
 		}
 

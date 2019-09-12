@@ -68,7 +68,8 @@ class JFormFieldModal_Agadvent extends JFormField
 				function jSelectAgadvent_" . $this->id . "(id, title, catid, object, url, language) {
 					window.processModalSelect('Agadvent', '" . $this->id . "', id, title, catid, object, url, language);
 				}
-				");
+				"
+				);
 
 				$scriptSelect[$this->id] = true;
 			}

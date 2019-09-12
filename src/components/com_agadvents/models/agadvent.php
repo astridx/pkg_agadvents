@@ -105,7 +105,7 @@ class AgadventsModelAgadvent extends JModelItem
 		{
 			return JError::raiseError(404, 'Item not found.');
 		}
-		
+
 	}
 
 	/**

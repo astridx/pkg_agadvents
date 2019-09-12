@@ -45,7 +45,7 @@ class AgadventsViewCategory extends JViewCategory
 
 			$temp = new JRegistry;
 			$temp->loadString($item->params);
-			$item->params = clone($this->params);
+			$item->params = clone $this->params;
 			$item->params->merge($temp);
 		}
 

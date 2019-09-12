@@ -66,7 +66,7 @@ class AgadventsRouter extends JComponentRouterBase
 		}
 
 		// Are we dealing with an agadvent that is attached to a menu item?
-		if (isset($query['view']) && ($mView == $query['view']) and (isset($query['id'])) and ($mId == (int) $query['id']))
+		if (isset($query['view']) && ($mView == $query['view']) && (isset($query['id'])) && ($mId == (int) $query['id']))
 		{
 			unset($query['view']);
 			unset($query['catid']);
@@ -75,11 +75,11 @@ class AgadventsRouter extends JComponentRouterBase
 			return $segments;
 		}
 
-		if (isset($view) and ($view == 'category' or $view == 'agadvent' or $view == 'agadvent_no'))
+		if (isset($view) && ($view == 'category' || $view == 'agadvent' || $view == 'agadvent_no'))
 		{
 			if ($mId != (int) $query['id'] || $mView != $view)
 			{
-				if (($view == 'agadvent' or $view == 'agadvent_no') && isset($query['catid']))
+				if (($view == 'agadvent' || $view == 'agadvent_no') && isset($query['catid']))
 				{
 					$catid = $query['catid'];
 				}
@@ -118,7 +118,7 @@ class AgadventsRouter extends JComponentRouterBase
 					$segments = array_merge($segments, array_reverse($array));
 				}
 
-				if ($view == 'agadvent' or $view == 'agadvent_no')
+				if ($view == 'agadvent' || $view == 'agadvent_no')
 				{
 					if ($advanced)
 					{

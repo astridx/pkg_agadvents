@@ -127,6 +127,7 @@ class AgadventsTableAgadvent extends JTable
 		if (trim($this->title) == '')
 		{
 			$this->setError(JText::_('COM_AGADVENTS_ERR_TABLES_TITLE'));
+
 			return false;
 		}
 

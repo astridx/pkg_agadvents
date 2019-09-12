@@ -44,7 +44,6 @@ class AgadventsViewAgadvents extends JViewLegacy
 			AgadventsHelper::addSubmenu('agadvents');
 		}
 
-
 		// Check for errors.
 		if (count($errors = $this->get('Errors')))
 		{
@@ -76,6 +75,7 @@ class AgadventsViewAgadvents extends JViewLegacy
 				$this->filterForm->setFieldAttribute('category_id', 'language', '*,' . $forcedLanguage, 'filter');
 			}
 		}
+
 		parent::display($tpl);
 	}
 

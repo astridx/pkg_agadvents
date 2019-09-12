@@ -89,15 +89,18 @@ class AgadventsViewAgadvent extends JViewLegacy
 			JToolbarHelper::apply('agadvent.apply');
 			JToolbarHelper::save('agadvent.save');
 		}
+
 		if (!$checkedOut && (count($user->getAuthorisedCategories('com_agadvents', 'core.create'))))
 		{
 			JToolbarHelper::save2new('agadvent.save2new');
 		}
+
 		// If an existing item, can save to a copy.
 		if (!$isNew && (count($user->getAuthorisedCategories('com_agadvents', 'core.create')) > 0))
 		{
 			// JToolbarHelper::save2copy('agadvent.save2copy');
 		}
+
 		if (empty($this->item->id))
 		{
 			JToolbarHelper::cancel('agadvent.cancel');

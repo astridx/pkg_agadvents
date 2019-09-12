@@ -86,7 +86,7 @@ else
 	$script[] = "								coordsPercent[i] = parseInt(((coords[i] / h) * 100) * hPercent);";
 	$script[] = "						}";
 	$script[] = "						\$this.attr(c, coordsPercent.toString());";
-	if ($params->get('clickableareas') === 'fix')
+	if ($params->get('clickableareas') === 'fix' || $params->get('clickableareas') === 'fixwithoutnumbers')
 	{
 		$script[] = "drawRect" . $uniqid . "(coordsPercent.toString(), number);";
 	}
@@ -139,7 +139,7 @@ else
 		$script[] = "}";
 	}
 
-	if ($params->get('clickableareas') === 'hover')
+	if ($params->get('clickableareas') === 'hover'|| $params->get('clickableareas') === 'fixwithoutnumbers')
 	{
 		$script[] = "function drawRect" . $uniqid . "(coOrdStr)";
 		$script[] = "{";

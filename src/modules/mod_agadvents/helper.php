@@ -45,7 +45,8 @@ class ModAgadventsHelper
 		$model->setState('list.start', 0);
 		$model->setState('list.limit', (int) $params->get('count', 5));
 
-		/*if ($params->get('test', 1))
+		/*
+		if ($params->get('test', 1))
 		{
 			$model->setState('filter.begin_ende', 0);
 		}
@@ -110,6 +111,7 @@ class ModAgadventsHelper
 				$category = $model->getCategory($item->id);
 				break;
 			}
+
 			return $category;
 		}
 
@@ -139,7 +141,8 @@ class ModAgadventsHelper
 		$model->setState('list.start', 0);
 		$model->setState('list.limit', (int) $params->get('count', 5));
 
-		/*if ($params->get('test', 1))
+		/*
+		if ($params->get('test', 1))
 		{
 			$model->setState('filter.begin_ende', 0);
 		}

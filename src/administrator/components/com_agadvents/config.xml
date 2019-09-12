@@ -26,6 +26,7 @@
             <option value="donot">COM_AGADVENTS_DO_NOT_HIGHLIGHT_CLICKABLE_AREAS</option>
             <option value="hover">COM_AGADVENTS_HIGHLIGHT_CLICKABLE_AREAS_ON_HOVER</option>
             <option value="fix">COM_AGADVENTS_DRAW_CLICKABLE_AREAS</option>
+            <option value="fixwithoutnumbers">COM_AGADVENTS_DRAW_CLICKABLE_AREAS_NONUMBERS</option>
         </field>
         <field type="spacer" name="agadventnotaktivcontent" hr="true" />
         <field

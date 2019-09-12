@@ -19,13 +19,13 @@ defined('_JEXEC') or die;
 class PlgInstallerAgadventsInstaller extends JPlugin
 {
 	/**
-	 * @var    String  base update url, to decide whether to process the event or not
+	 * @var    string  base update url, to decide whether to process the event or not
 	 * @since  1.0.0
 	 */
 	private $baseUrl = 'https://github.com/astridx/pkg_agadvents/releases/download';
 
 	/**
-	 * @var    String  your extension identifier, to retrieve its params
+	 * @var    string  your extension identifier, to retrieve its params
 	 * @since  1.0.0
 	 */
 	private $extension = 'com_agadvents';
@@ -42,7 +42,7 @@ class PlgInstallerAgadventsInstaller extends JPlugin
 	public function onInstallerBeforePackageDownload(&$url)
 	{
 		// Are we trying to update our extension
-		// It is not 
+		// It is not
 		if (strpos($url, $this->baseUrl) !== 0)
 		{
 			return true;
@@ -53,7 +53,7 @@ class PlgInstallerAgadventsInstaller extends JPlugin
 
 		$file = str_replace($this->baseUrl, '', $url);
 
-		//$url = "www.astrid-guenther.de/updates/agadvents/" . $access . "/" . $file;
+		// $url = "www.astrid-guenther.de/updates/agadvents/" . $access . "/" . $file;
 
 		return true;
 	}
