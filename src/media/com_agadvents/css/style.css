@@ -5,3 +5,11 @@ canvas {
 .venoframe {
 	padding: 1%!important;
 }
+
+img[usemap], map area { 
+	border: none!important; 
+}
+
+area { 
+	outline:none!important;
+} 
