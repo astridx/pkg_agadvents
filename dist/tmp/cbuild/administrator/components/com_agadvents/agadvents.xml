@@ -2,12 +2,12 @@
 <extension type="component" version="3.7" method="upgrade">
 	<name>com_agadvents</name>
 	<author>Astrid Günther</author>
-	<creationDate>2019-09-29</creationDate>
-	<copyright>(C) 2019 Astrid Günther. All rights reserved.</copyright>
+	<creationDate>2020-10-11</creationDate>
+	<copyright>(C) 2020 Astrid Günther. All rights reserved.</copyright>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<authorEmail>info@astrid-guenther.de</authorEmail>
 	<authorUrl>www.astrid-guenther.de</authorUrl>
-	<version>2.0.3</version>
+	<version>2.0.5</version>
 	<description>COM_AGADVENTS_XML_DESCRIPTION</description>
 	<scriptfile>script.php</scriptfile>
 
@@ -30,6 +30,7 @@
 <folder>helpers</folder>
 <file>metadata.xml</file>
 <file>router.php</file>
+<folder>language</folder>
 <folder>views</folder>
 	</files>
 	<languages folder="language">
@@ -76,6 +77,7 @@
 <folder>helpers</folder>
 <folder>sql</folder>
 <file>config.xml</file>
+<folder>language</folder>
 <file>CHANGES.txt</file>
 <file>agadvents.xml</file>
 <folder>views</folder>

@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  pkg_agadvents
  *
- * @copyright   Copyright (C) 2005 - 2018 Astrid Günther, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2020 Astrid Günther, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later;
  * @link        astrid-guenther.de
  */
@@ -13,7 +13,7 @@ defined('JPATH_BASE') or die;
 /**
  * Supports a modal agadvent picker.
  *
- * @since  __DEPLOY_VERSION__
+ * @since  2.0.5
  */
 class JFormFieldModal_Agadvent extends JFormField
 {
@@ -21,7 +21,7 @@ class JFormFieldModal_Agadvent extends JFormField
 	 * The form field type.
 	 *
 	 * @var    string
-	 * @since  __DEPLOY_VERSION__
+	 * @since  2.0.5
 	 */
 	protected $type = 'Modal_Agadvent';
 
@@ -30,7 +30,7 @@ class JFormFieldModal_Agadvent extends JFormField
 	 *
 	 * @return  string  The field input markup.
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	protected function getInput()
 	{
@@ -265,7 +265,7 @@ class JFormFieldModal_Agadvent extends JFormField
 	 *
 	 * @return  string  The field label markup.
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	protected function getLabel()
 	{

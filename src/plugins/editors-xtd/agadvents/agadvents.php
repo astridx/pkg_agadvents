@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  pkg_agadvents
  *
- * @copyright   Copyright (C) 2005 - 2018 Astrid Günther, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2020 Astrid Günther, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later;
  * @link        astrid-guenther.de
  */
@@ -21,7 +21,7 @@ class PlgButtonAgadvents extends JPlugin
 	 * Load the language file on instantiation.
 	 *
 	 * @var    boolean
-	 * @since  __DEPLOY_VERSION__
+	 * @since  2.0.5
 	 */
 	protected $autoloadLanguage = true;
 
@@ -32,7 +32,7 @@ class PlgButtonAgadvents extends JPlugin
 	 *
 	 * @return  JObject  The button options as JObject
 	 *
-	 * @since  __DEPLOY_VERSION__
+	 * @since  2.0.5
 	 */
 	public function onDisplay($name)
 	{

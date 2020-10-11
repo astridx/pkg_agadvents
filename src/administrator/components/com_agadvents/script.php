@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  pkg_agadvents
  *
- * @copyright   Copyright (C) 2005 - 2018 Astrid Günther, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2020 Astrid Günther, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later;
  * @link        astrid-guenther.de
  */
@@ -66,7 +66,7 @@ class Com_AgadventsInstallerScript
 		// Check if the Uncategorised category exists before adding it
 		if (!$category->load(array('extension' => 'com_agadvents', 'title' => 'Uncategorised')))
 		{
-			$catid = $this->createCategorie('Uncategorised', 'en-GB');
+			$catid = $this->createCategorie('Uncategorised', '*');
 
 			for ($i = 1; $i <= 24; $i++)
 			{
@@ -76,26 +76,26 @@ class Com_AgadventsInstallerScript
 			}
 		}
 
-		if (!$category->load(array('extension' => 'com_agadvents', 'title' => '2017')))
+		if (!$category->load(array('extension' => 'com_agadvents', 'title' => '2020')))
 		{
-			$catid = $this->createCategorie('2017', 'en-GB');
+			$catid = $this->createCategorie('2020', '*');
 
 			for ($i = 1; $i <= 24; $i++)
 			{
-				$title = $i . '. Dezember 2017';
-				$alias = $i . '-dezember2017' . uniqid();
+				$title = $i . '. Dezember 2020';
+				$alias = $i . '-dezember2020' . uniqid();
 				$this->createAdvents($title, $alias, $catid, $i);
 			}
 		}
 
-		if (!$category->load(array('extension' => 'com_agadvents', 'title' => '2016')))
+		if (!$category->load(array('extension' => 'com_agadvents', 'title' => '2019')))
 		{
-			$catid = $this->createCategorie('2016', 'en-GB');
+			$catid = $this->createCategorie('2019', '*');
 
 			for ($i = 1; $i <= 24; $i++)
 			{
-				$title = $i . '. Dezember 2016';
-				$alias = $i . '-dezember2016' . uniqid();
+				$title = $i . '. Dezember 2019';
+				$alias = $i . '-dezember2019' . uniqid();
 				$this->createAdvents($title, $alias, $catid, $i);
 			}
 		}
@@ -284,13 +284,13 @@ class Com_AgadventsInstallerScript
 		if ($number < 10)
 		{
 			$number = '0' . $number;
-			$agadvent->begin = '2017-12-' . $number . ' 00:01:01';
-			$agadvent->ende = '2017-12-' . $number . ' 23:59:59';
+			$agadvent->begin = '2020-12-' . $number . ' 00:01:01';
+			$agadvent->ende = '2020-12-' . $number . ' 23:59:59';
 		}
 		else
 		{
-			$agadvent->begin = '2017-12-' . $number . ' 00:01:01';
-			$agadvent->ende = '2017-12-' . $number . ' 23:59:59';
+			$agadvent->begin = '2020-12-' . $number . ' 00:01:01';
+			$agadvent->ende = '2020-12-' . $number . ' 23:59:59';
 		}
 
 		$agadvent->asset_id = 0;
@@ -299,11 +299,11 @@ class Com_AgadventsInstallerScript
 		$agadvent->hits = 0;
 		$agadvent->state = 1;
 		$agadvent->checked_out = 0;
-		$agadvent->checked_out_time = '2017-04-11 00:00:00';
+		$agadvent->checked_out_time = '2020-04-11 00:00:00';
 		$agadvent->ordering = 0;
 		$agadvent->access = 1;
 		$agadvent->params = '';
-		$agadvent->language = 'en-GB';
+		$agadvent->language = '*';
 		$agadvent->created = '0000-00-00 00:00:00';
 		$agadvent->created_by = 0;
 		$agadvent->created_by_alias = '';

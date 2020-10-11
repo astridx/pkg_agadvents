@@ -3,7 +3,7 @@
 
 # Quickstart
 
-1. Install this package via Joomla! installer. 
+1. Install this newest [release](https://github.com/astridx/pkg_agadvents/releases) via Joomla! installer. 
 Please check after the installation, if the menu item for the component is inserted into the menu.
 
 ![b1](https://user-images.githubusercontent.com/9974686/51182088-51b9bc80-18cd-11e9-9786-0fc902cff8fb.png)
@@ -41,7 +41,7 @@ that you `choose the category` and `save` the item.
 
 ![b7](https://user-images.githubusercontent.com/9974686/51182081-50888f80-18cd-11e9-80cc-e3e7e157787f.png)
 
-8. Scool to the bottom  
+8. Scroll to the bottom  
 After you have `choosen the category` and `saved` the item 
 you see the image of the category at the bottom. Now you can 
 select the clickable area with your mouse. You can only choose an area in the shape of an rectangle.

@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  pkg_agadvents
  *
- * @copyright   Copyright (C) 2005 - 2018 Astrid Günther, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2020 Astrid Günther, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later;
  * @link        astrid-guenther.de
  */
@@ -13,7 +13,7 @@ defined('_JEXEC') or die;
 /**
  * Installation class to perform additional changes during install/uninstall/update
  *
- * @since  __DEPLOY_VERSION__
+ * @since  2.0.5
  */
 class Pkg_AgadventsInstallerScript extends JInstallerScript
 {
@@ -22,7 +22,7 @@ class Pkg_AgadventsInstallerScript extends JInstallerScript
 	 *
 	 * @return  void
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	public function __construct()
 	{

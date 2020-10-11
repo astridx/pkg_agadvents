@@ -3,7 +3,7 @@
  * @package     Joomla.Site
  * @subpackage  pkg_agadvents
  *
- * @copyright   Copyright (C) 2005 - 2018 Astrid Günther, Inc. All rights reserved.
+ * @copyright   Copyright (C) 2005 - 2020 Astrid Günther, Inc. All rights reserved.
  * @license     GNU General Public License version 2 or later;
  * @link        astrid-guenther.de
  */
@@ -17,7 +17,7 @@ JTable::addIncludePath(__DIR__ . '/../tables');
 /**
  * Content associations helper.
  *
- * @since  __DEPLOY_VERSION__
+ * @since  2.0.5
  */
 class AgadventsAssociationsHelper extends JAssociationExtensionHelper
 {
@@ -26,7 +26,7 @@ class AgadventsAssociationsHelper extends JAssociationExtensionHelper
 	 *
 	 * @var     array   $extension
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	protected $extension = 'com_agadvents';
 
@@ -35,7 +35,7 @@ class AgadventsAssociationsHelper extends JAssociationExtensionHelper
 	 *
 	 * @var     array   $itemTypes
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	protected $itemTypes = array('agadvent', 'category');
 
@@ -44,7 +44,7 @@ class AgadventsAssociationsHelper extends JAssociationExtensionHelper
 	 *
 	 * @var     boolean   $associationsSupport
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	protected $associationsSupport = true;
 
@@ -56,7 +56,7 @@ class AgadventsAssociationsHelper extends JAssociationExtensionHelper
 	 *
 	 * @return  array
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	public function getAssociations($typeName, $id)
 	{
@@ -93,7 +93,7 @@ class AgadventsAssociationsHelper extends JAssociationExtensionHelper
 	 *
 	 * @return  JTable|null
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	public function getItem($typeName, $id)
 	{
@@ -132,7 +132,7 @@ class AgadventsAssociationsHelper extends JAssociationExtensionHelper
 	 *
 	 * @return  array  Array of item types
 	 *
-	 * @since   __DEPLOY_VERSION__
+	 * @since   2.0.5
 	 */
 	public function getType($typeName = '')
 	{
