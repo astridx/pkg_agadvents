@@ -79,7 +79,6 @@
 			label="COM_AGADVENTS_FIELD_NUMBER_LABEL"
 			description="COM_AGADVENTS_FIELD_NUMBER_DESC"
 			first="1"
-			last="24"
 			step="1"
 		/>
 		<field
