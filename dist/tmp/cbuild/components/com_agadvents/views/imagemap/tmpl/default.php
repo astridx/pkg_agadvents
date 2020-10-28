@@ -171,6 +171,16 @@ else
 		$script[] = "	var coordStr = element.getAttribute('coords');";
 		$script[] = "	drawRect" . $uniqid . "(coordStr);";
 		$script[] = "}";
+	} else {
+		$script[] = "function myLeave" . $uniqid . "()";
+		$script[] = "{";
+		$script[] = "	console.log('l');";
+		$script[] = "}";
+
+		$script[] = "function myHover" . $uniqid . "(element)";
+		$script[] = "{";
+		$script[] = "	console.log('h');";
+		$script[] = "}";		
 	}
 }
 JFactory::getDocument()->addScriptDeclaration(implode("\n", $script));
