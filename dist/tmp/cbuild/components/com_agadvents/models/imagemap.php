@@ -110,7 +110,7 @@ class AgadventsModelImageMap extends JModelList
 	{
 		$groups = implode(',', JFactory::getUser()->getAuthorisedViewLevels());
 
-		$this->setState('list.limit', 24);
+		$this->setState('list.limit', 100);
 
 		// Create a new query object.
 		$db = $this->getDbo();

@@ -174,12 +174,12 @@ else
 	} else {
 		$script[] = "function myLeave" . $uniqid . "()";
 		$script[] = "{";
-		$script[] = "	console.log('l');";
+		$script[] = "	console.log('');";
 		$script[] = "}";
 
 		$script[] = "function myHover" . $uniqid . "(element)";
 		$script[] = "{";
-		$script[] = "	console.log('h');";
+		$script[] = "	console.log('');";
 		$script[] = "}";		
 	}
 }
