@@ -1,0 +1,12 @@
+{
+  "name": "Agadvents",
+  "description": "Agadvents Extensions",
+  "repository": {},
+  "license": "See license in license.md",
+  "engines": {
+    "node": "14.x"
+  },
+  "dependencies": {
+    "glightbox": "^3.0.0"
+  }
+}

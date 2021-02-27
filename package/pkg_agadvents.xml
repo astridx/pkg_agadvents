@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<extension type="package" method="upgrade">
+	<name>pkg_agadvents</name>
+	<packagename>agadvents</packagename>
+	<creationDate>DP_DEPLOY_DATE</creationDate>
+	<packager>Astrid Günther</packager>
+	<copyright>(C) Astrid Günther. All rights reserved.</copyright>
+	<packageremail>info@astrid-guenther.de</packageremail>
+	<packagerurl>www.astrid-guenther.de</packagerurl>
+	<author>Astrid Günther</author>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>DP_DEPLOY_VERSION</version>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<description>PKG_AGADVENTS_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<files>
+		<!-- The id for each extension is the element stored in the DB -->
+		<file type="component" id="com_agadvents">com_agadvents.zip</file>
+		<file type="module" id="mod_agadvents" client="site">mod_agadvents.zip</file>
+		<file type="plugin" id="plg_editors-xtd_agadvents" group="editors-xtd">plg_editors-xtd_agadvents.zip</file>
+		<file type="plugin" id="plg_system_agadvents" group="system">plg_system_agadvents.zip</file>
+		<file type="plugin" id="plg_search_agadvents" group="search">plg_search_agadvents.zip</file>
+		<file type="plugin" id="plg_finder_agadvents" group="finder">plg_finder_agadvents.zip</file>
+		<file type="plugin" id="plg_installer_agadventsinstaller" group="installer">plg_installer_agadventsinstaller.zip</file>
+</files>
+	<updateservers>
+		<server type="extension" name="Agosm Update Site">https://raw.githubusercontent.com/astridx/pkg_agadvents/master/agadvents-update.xml</server>
+	</updateservers>
+</extension>

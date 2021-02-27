@@ -1,0 +1,34 @@
+{
+  "packages": [
+    {
+      "name": "Agadvents",
+      "originalManifestFileName": "pkg_agadvents",
+      "substituteManifestFileName": "pkg_agadvents",
+      "extensions": [
+        {
+          "name": "com_agadvents",
+          "substitutes": [
+            {
+              "original": "administrator/components/com_agadvents/agadvents.xml",
+              "replace": "agadvents.xml"
+            },
+            {
+              "original": "administrator/components/com_agadvents/script.php",
+              "replace": "script.php"
+            }
+          ]
+        },
+        {
+          "name": "mod_agadvents",
+          "substitutes": [
+          ]
+        },
+        {
+          "name": "plg_finder_agadvents",
+          "substitutes": [
+          ]
+        }
+      ]
+    }
+  ]
+}
