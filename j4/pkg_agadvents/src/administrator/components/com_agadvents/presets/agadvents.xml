@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<menu
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="urn:joomla.org"
+	xsi:schemaLocation="urn:joomla.org menu.xsd"
+	>
+	<menuitem
+		title="COM_AGADVENTS"
+		type="heading"
+		icon="comment"
+		class="class:comment"
+		>
+		<menuitem
+			title="COM_AGADVENTS"
+			type="component"
+			element="com_agadvents"
+			link="index.php?option=com_agadvents"
+			quicktask="index.php?option=com_agadvents&amp;view=agadvent&amp;layout=edit"
+			quicktask-title="COM_AGADVENTS"
+		/>
+
+		<menuitem
+			title="JCATEGORY"
+			type="component"
+			element="com_agadvents"
+			link="index.php?option=com_categories&amp;extension=com_agadvents"
+			quicktask="index.php?option=com_categories&amp;view=category&amp;layout=edit&amp;extension=com_agadvents"
+			quicktask-title="JCATEGORY"
+		/>
+	</menuitem>
+</menu>

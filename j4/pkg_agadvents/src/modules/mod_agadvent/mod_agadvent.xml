@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" client="site" method="upgrade">
+	<name>MOD_AGADVENT</name>
+	<creationDate>[DATE]</creationDate>
+	<author>[AUTHOR]</author>
+	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
+	<authorUrl>[AUTHOR_URL]</authorUrl>
+	<copyright>[COPYRIGHT]</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<version>__BUMP_VERSION__</version>
+	<description>MOD_AGADVENT_XML_DESCRIPTION</description>
+	<scriptfile>script.php</scriptfile>
+	<namespace path="src">AgadventNamespace\Module\Agadvent</namespace>
+	<files>
+		<filename module="mod_agadvent">mod_agadvent.php</filename>
+		<folder>tmpl</folder>
+		<folder>src</folder>
+		<folder>language</folder>
+		<filename>mod_agadvent.xml</filename>
+	</files>
+	<config>
+		<fields name="params">
+			<fieldset name="agadventparams">
+				<field
+					name="catid"
+					type="category"
+					label="JCATEGORY"
+					description="MOD_AGADVENTS_FIELD_CATEGORY_DESC"
+					extension="com_agadvents"
+					filter="intarray"
+				/>
+
+				<field
+					name="adventspacer1"
+					type="spacer"
+					hr="true"
+				/>
+
+				<field
+					name="test"
+					type="radio"
+					layout="joomla.form.field.radio.switcher"
+					label="MOD_AGADVENTS_FIELD_TEST_LABEL"
+					description="MOD_AGADVENTS_FIELD_TEST_DESC"
+					default="1"
+					filter="integer"
+					>
+					<option value="0">JNO</option>
+					<option value="1">JYES</option>
+				</field>
+
+				<field
+					name="adventspacer2"
+					type="spacer"
+					hr="true"
+				/>
+
+				<field
+					name="mode"
+					type="list"
+					label="MOD_AGADVENTS_FIELD_MODE_LABEL"
+					description="MOD_AGADVENTS_FIELD_MODE_DESC"
+					default="image"
+					validate="options"
+					>
+					<option value="image">MOD_AGADVENTS_FIELD_MODE_OPTION_IMAGE</option>
+					<option value="list">MOD_AGADVENTS_FIELD_MODE_OPTION_LIST</option>
+					<option value="imageandlist">MOD_AGADVENTS_FIELD_MODE_OPTION_IMAGE_AND_LIST</option>
+				</field>
+			</fieldset>
+		</fields>
+	</config>
+</extension>

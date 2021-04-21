@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<metadata>
+	<layout title="COM_AGADVENTS_AGADVENT_VIEW_WITHHEAD_TITLE">
+		<message>
+			<![CDATA[COM_AGADVENTS_AGADVENT_VIEW_WITHHEAD_DESC]]>
+		</message>
+	</layout>
+	<!-- Add fields to the request variables for the layout. -->
+	<fields name="request">
+		<fieldset name="request"
+			addfieldprefix="AgadventNamespace\Component\Agadvents\Administrator\Field"
+		>
+			<field
+				name="id"
+				type="modal_agadvent"
+				label="COM_AGADVENTS_SELECT_AGADVENT_LABEL"
+				required="true"
+				select="true"
+				new="true"
+				edit="true"
+				clear="true"
+			/>
+		</fieldset>
+	</fields>
+</metadata>

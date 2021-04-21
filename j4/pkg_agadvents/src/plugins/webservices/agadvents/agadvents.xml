@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="plugin" group="webservices" method="upgrade">
+	<name>plg_webservices_agadvents</name>
+	<creationDate>[DATE]</creationDate>
+	<author>[AUTHOR]</author>
+	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
+	<authorUrl>[AUTHOR_URL]</authorUrl>
+	<copyright>[COPYRIGHT]</copyright>
+	<license>GNU General Public License version 2 or later;</license>
+	<version>__BUMP_VERSION__</version>
+	<description>PLG_WEBSERVICES_AGADVENTS_XML_DESCRIPTION</description>
+	<files>
+		<filename plugin="agadvents">agadvents.php</filename>
+		<folder>language</folder>
+ 		<folder>zips</folder>
+    	<filename>data.json</filename>
+	</files>
+</extension>

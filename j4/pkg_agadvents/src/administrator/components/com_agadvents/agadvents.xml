@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<extension type="component" method="upgrade">
+	<name>COM_AGADVENTS</name>
+	<creationDate>[DATE]</creationDate>
+	<author>[AUTHOR]</author>
+	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
+	<authorUrl>[AUTHOR_URL]</authorUrl>
+	<copyright>[COPYRIGHT]</copyright>
+	<license>GNU General Public License version 2 or later;</license>
+	<version>__BUMP_VERSION__</version>
+	<description>COM_AGADVENTS_XML_DESCRIPTION</description>
+	<namespace path="src">AgadventNamespace\Component\Agadvents</namespace>
+	<scriptfile>script.php</scriptfile>
+	<install> <!-- Runs on install -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/install.mysql.utf8.sql</file>
+		</sql>
+	</install>
+	<uninstall> <!-- Runs on uninstall -->
+		<sql>
+			<file driver="mysql" charset="utf8">sql/uninstall.mysql.utf8.sql</file>
+		</sql>
+	</uninstall>
+	<update>  <!-- Runs on update -->
+		<schemas>
+			<schemapath type="mysql">sql/updates/mysql</schemapath>
+		</schemas>
+	</update>
+	<!-- Frond-end files -->
+	<files folder="components/com_agadvents">
+		<folder>language</folder>
+		<folder>src</folder>
+		<folder>tmpl</folder>
+	</files>
+    <media folder="media/com_agadvents" destination="com_agadvents">
+		<filename>joomla.asset.json</filename>
+		<folder>js</folder>
+    </media>
+	<!-- Back-end files -->
+	<administration>
+		<menu img="class:comment">
+			COM_AGADVENTS
+			<params>
+				<dashboard>agadvents</dashboard>
+			</params>
+		</menu>
+		<submenu>
+			<menu link="option=com_agadvents">
+				COM_AGADVENTS
+				<params>
+					<menu-quicktask-title>COM_AGADVENTS</menu-quicktask-title>
+					<menu-quicktask>index.php?option=com_agadvents&amp;view=agadvent&amp;layout=edit</menu-quicktask>
+				</params>
+			</menu>
+			<menu link="option=com_categories&amp;extension=com_agadvents"
+				view="categories" img="class:agadvents-cat" alt="Agadvents/Categories">
+				JCATEGORY
+				<params>
+					<menu-quicktask-title>JCATEGORY</menu-quicktask-title>
+					<menu-quicktask>index.php?option=com_categories&amp;view=category&amp;layout=edit&amp;extension=com_agadvents</menu-quicktask>
+				</params>
+			</menu>
+		</submenu>
+		<files folder="administrator/components/com_agadvents">
+			<filename>access.xml</filename>
+			<filename>agadvents.xml</filename>
+			<filename>config.xml</filename>
+			<folder>forms</folder>
+			<folder>language</folder>
+			<folder>services</folder>
+			<folder>sql</folder>
+			<folder>src</folder>
+			<folder>tmpl</folder>
+		</files>
+	</administration>
+	<api>
+		<files folder="api/components/com_agadvents">
+			<folder>src</folder>
+		</files>
+	</api>
+	<changelogurl>https://raw.githubusercontent.com/astridx/boilerplate/tutorial/changelog.xml</changelogurl>
+	<updateservers>
+		<server type="extension" name="Agadvent Updates">https://raw.githubusercontent.com/astridx/boilerplate/tutorial/agadvent_update.xml</server>
+	</updateservers>
+	<dlid prefix="dlid=" suffix="" />
+</extension>

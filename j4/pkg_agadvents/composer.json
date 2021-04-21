@@ -1,0 +1,13 @@
+{
+    "name": "astrid/boilerplate",
+    "require": {
+        "astridx/jorobo": "0.8.*"
+    },
+    "authors": [
+        {
+            "name": "astridx",
+            "email": "info@astrid-guenther.de"
+        }
+    ]
+}
+
