@@ -21,6 +21,7 @@
 		<file type="plugin" id="plg_webservices_agadvents" group="webservices">plg_webservices_agadvents.zip</file>
 		<file type="plugin" id="plg_sampledata_agadvents" group="sampledata">plg_sampledate_agadvents.zip</file>
 	</files>
+	<changelogurl>https://raw.githubusercontent.com/astridx/pkg_agadvents/master/changelog.xml</changelogurl>
 	<updateservers>
 		<server type="extension" name="Agadvents Update Site">https://raw.githubusercontent.com/astridx/pkg_agadvents/master/agadvents-update.xml</server>
 	</updateservers>

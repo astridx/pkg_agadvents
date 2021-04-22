@@ -124,6 +124,98 @@ class PlgSampledataAgadvents extends CMSPlugin
 		foreach ($currentData as $num => $data) {
 			$teststring = $teststring . " - " . $data->path;
 		}
+
+
+
+		// Store the categories
+
+			$categoryModel = $this->app->bootComponent('com_categories')
+				->getMVCFactory()->createModel('Category', 'Administrator');
+
+			$category = [
+				'title'           => 'Weichnachten 2021 zum zweiten',
+				'parent_id'       => 1,
+				'id'              => 0,
+				'published'       => 1,
+				'access'          => 1,
+				'created_user_id' => $this->user->id,
+				'extension'       => 'com_agadvents',
+				'level'           => 1,
+				'alias'           => 'akllweihnachten2021jsdkfl',
+				'associations'    => array(),
+				'description'     => '',
+				'language'        => '*',
+				'params'          => '{}'
+			];
+
+			try
+			{
+				if (!$categoryModel->save($category))
+				{
+					Factory::getLanguage()->load('com_categories');
+					throw new Exception($categoryModel->getError());
+				}
+			}
+			catch (Exception $e)
+			{
+				$response            = array();
+				$response['success'] = false;
+				$response['message'] = Text::sprintf('PLG_SAMPLEDATA_BLOG_STEP_FAILED', 1, $e->getMessage());
+
+				return $response;
+			}
+
+			// Get ID from category we just added
+			$catIds = $categoryModel->getItem()->id;
+
+
+
+
+			$item = [
+				'name'  => 'Tag 1',
+				'catid'    => $catIds,
+				'fulltext' => 'fulltextz',
+				'fulltext_no' => 'fulltextz',
+				'number' => 1,
+				'cords' => '100,100,100',
+				'start_date' => '2020-04-11 00:00:00',
+				'end_date' => '2020-04-11 00:00:00',
+				'params'  => '{}'
+		  ];
+
+		  $mvcFactory = $this->app->bootComponent('com_agadvents')->getMVCFactory();
+		  $adventsModel = $mvcFactory->createModel('Agadvent', 'Administrator', ['ignore_request' => true]);
+
+		  if (!$adventsModel->save($item))
+		  {
+			  $response  = array();
+			  $response['success'] = false;
+			  $response['message'] = Text::sprintf('PLG_SAMPLEDATA_BLOG_STEP_FAILED', 1, Text::_($articleModel->getError()));
+
+			  return $response;
+		  }
+
+		  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 		$response = new stdClass;
 		$response->success = true;
 		$response->message = $teststring . Text::_('PLG_SAMPLEDATA_AGADVENTS_STEP1_SUCCESS');

@@ -1,0 +1,10 @@
+<changelogs>
+	<changelog>
+		<element>com_agadvents</element>
+		<type>component</type>
+		<version>4.0.0</version>
+		<note>
+			<item>Initial Version</item>
+		</note>
+	</changelog>
+</changelogs>

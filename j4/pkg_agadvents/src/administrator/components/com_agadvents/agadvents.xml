@@ -78,9 +78,4 @@
 			<folder>src</folder>
 		</files>
 	</api>
-	<changelogurl>https://raw.githubusercontent.com/astridx/boilerplate/tutorial/changelog.xml</changelogurl>
-	<updateservers>
-		<server type="extension" name="Agadvent Updates">https://raw.githubusercontent.com/astridx/boilerplate/tutorial/agadvent_update.xml</server>
-	</updateservers>
-	<dlid prefix="dlid=" suffix="" />
 </extension>
