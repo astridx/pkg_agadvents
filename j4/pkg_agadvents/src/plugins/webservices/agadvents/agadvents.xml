@@ -12,7 +12,5 @@
 	<files>
 		<filename plugin="agadvents">agadvents.php</filename>
 		<folder>language</folder>
- 		<folder>zips</folder>
-    	<filename>data.json</filename>
 	</files>
 </extension>

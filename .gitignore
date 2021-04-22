@@ -1,4 +1,7 @@
+.gitignore
 vendor/
 sik/
 dist/
-nbproject/
+j4/pkg_agadvents/vendor/
+j4/pkg_agadvents/sik/
+j4/pkg_agadvents/dist/
