@@ -64,6 +64,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 	protected $stepsData; 
 
 	public function __construct(&$subject, $config = array()) {
+		// https://github.com/dgrammatiko/sloth-pkg/blob/main/plg_sampledata/sloth.php
 		if (file_exists(__DIR__ . '/data.json')) {
 			try {
 				$json = file_get_contents(__DIR__ . '/data.json');
@@ -77,9 +78,6 @@ class PlgSampledataAgadvents extends CMSPlugin
 	
 		parent::__construct($subject, $config);
 	
-		$this->year   = date('Y');
-		$this->month  = date('m');
-		$this->day    = date('d');
 		$this->user   = Factory::getUser();
 	}
 
@@ -108,7 +106,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 	}
 
 	/**
-	 * First step to enter the sampledata. Content.
+	 * First step to enter the sampledata. Category and Items.
 	 *
 	 * @return  array or void  Will be converted into the JSON response to the module.
 	 *
@@ -116,109 +114,86 @@ class PlgSampledataAgadvents extends CMSPlugin
 	 */
 	public function onAjaxSampledataApplyStep1()
 	{
-		
-		$currentData = $this->stepsData->{1}->data;
-		//https://github.com/dgrammatiko/sloth-pkg/blob/main/plg_sampledata/sloth.php
-		$currentData = $this->stepsData->{1}->data;
-		$teststring = "";
-		foreach ($currentData as $num => $data) {
-			$teststring = $teststring . " - " . $data->path;
+		$categoryModel = $this->app->bootComponent('com_categories')
+			->getMVCFactory()->createModel('Category', 'Administrator');
+
+		$category = [
+			'title'           => 'Weihnachten ' . date('Y'),
+			'parent_id'       => 1,
+			'id'              => 0,
+			'published'       => 1,
+			'access'          => 1,
+			'created_user_id' => $this->user->id,
+			'extension'       => 'com_agadvents',
+			'level'           => 1,
+			'alias'           => 'weihnachten'. date('Y'),
+			'associations'    => array(),
+			'description'     => '',
+			'language'        => '*',
+			'params'          => '{}'
+		];
+
+		try
+		{
+			if (!$categoryModel->save($category))
+			{
+				throw new Exception($categoryModel->getError());
+			}
+		}
+		catch (Exception $e)
+		{
+			$response = new stdClass;
+			$response->success = false;
+			$response->message = Text::sprintf('PLG_SAMPLEDATA_AGADVENTS_STEP_FAILED', 1, $e->getMessage());
+
+			return $response;
 		}
 
+		// Get ID from category we just added
+		$catId = $categoryModel->getItem()->id;
 
 
-		// Store the categories
+		$mvcFactory = $this->app->bootComponent('com_agadvents')->getMVCFactory();
+		$adventsModel = $mvcFactory->createModel('Agadvent', 'Administrator', ['ignore_request' => true]);
 
-			$categoryModel = $this->app->bootComponent('com_categories')
-				->getMVCFactory()->createModel('Category', 'Administrator');
+		for ($i = 1; $i <= 24; $i++)
+		{
+			$adventsModel = $mvcFactory->createModel('Agadvent', 'Administrator', ['ignore_request' => true]);
 
-			$category = [
-				'title'           => 'Weichnachten 2021 zum zweiten',
-				'parent_id'       => 1,
-				'id'              => 0,
-				'published'       => 1,
-				'access'          => 1,
-				'created_user_id' => $this->user->id,
-				'extension'       => 'com_agadvents',
-				'level'           => 1,
-				'alias'           => 'akllweihnachten2021jsdkfl',
-				'associations'    => array(),
-				'description'     => '',
-				'language'        => '*',
-				'params'          => '{}'
+			$item = [
+				'name'  => 'Tag '. $i,
+				'alias'    => 'taga'. $i,
+				'catid'    => $catId,
+				'fulltext' => Text::_('PLG_SAMPLEDATA_AGADVENTS_FULL_TEXT') . $i,
+				'fulltext_no' => Text::_('PLG_SAMPLEDATA_AGADVENTS_FULL_TEXT_NO') . $i,
+				'number' => $i,
+				'published' => 1,
+				'cords' => '100,100,100',
+				'start_date' => '2021-12-' . sprintf("%02d", $i) . ' 00:00:01',
+				'end_date' => '2021-12-' . sprintf("%02d", $i) . ' 23:59:59',
+				'params'  => '{}'
 			];
 
 			try
 			{
-				if (!$categoryModel->save($category))
+				if (!$adventsModel->save($item))
 				{
-					Factory::getLanguage()->load('com_categories');
-					throw new Exception($categoryModel->getError());
+					throw new Exception($adventsModel->getError());
 				}
 			}
 			catch (Exception $e)
 			{
-				$response            = array();
-				$response['success'] = false;
-				$response['message'] = Text::sprintf('PLG_SAMPLEDATA_BLOG_STEP_FAILED', 1, $e->getMessage());
-
+				$response = new stdClass;
+				$response->success = false;
+				$response->message = Text::sprintf('PLG_SAMPLEDATA_AGADVENTS_STEP_FAILED', 1, $e->getMessage());
+			
 				return $response;
 			}
-
-			// Get ID from category we just added
-			$catIds = $categoryModel->getItem()->id;
-
-
-
-
-			$item = [
-				'name'  => 'Tag 1',
-				'catid'    => $catIds,
-				'fulltext' => 'fulltextz',
-				'fulltext_no' => 'fulltextz',
-				'number' => 1,
-				'cords' => '100,100,100',
-				'start_date' => '2020-04-11 00:00:00',
-				'end_date' => '2020-04-11 00:00:00',
-				'params'  => '{}'
-		  ];
-
-		  $mvcFactory = $this->app->bootComponent('com_agadvents')->getMVCFactory();
-		  $adventsModel = $mvcFactory->createModel('Agadvent', 'Administrator', ['ignore_request' => true]);
-
-		  if (!$adventsModel->save($item))
-		  {
-			  $response  = array();
-			  $response['success'] = false;
-			  $response['message'] = Text::sprintf('PLG_SAMPLEDATA_BLOG_STEP_FAILED', 1, Text::_($articleModel->getError()));
-
-			  return $response;
-		  }
-
-		  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+		}
 
 		$response = new stdClass;
 		$response->success = true;
-		$response->message = $teststring . Text::_('PLG_SAMPLEDATA_AGADVENTS_STEP1_SUCCESS');
+		$response->message = Text::_('PLG_SAMPLEDATA_AGADVENTS_STEP1_SUCCESS');
 
 		return $response;		
 	}
@@ -282,6 +257,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 	 * @since  __BUMP_VERSION__
 	 */
 	private function copyFiles() {
+		// https://github.com/dgrammatiko/sloth-pkg/blob/main/plg_sampledata/sloth.php
 		$zip = new \ZipArchive;
 		if (is_file(__DIR__ . '/zips/images.zip')) {
 		  if ($zip->open(__DIR__ . '/zips/images.zip') === TRUE) {

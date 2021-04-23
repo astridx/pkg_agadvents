@@ -15,11 +15,6 @@ CREATE TABLE IF NOT EXISTS `#__agadvents_details` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_unicode_ci;
 
-INSERT INTO `#__agadvents_details` (`name`, `fulltext`, `fulltext_no`, `number`, `cords`) VALUES
-('Erster Advent', 'Erster Advent Fulltext', 'Erster Advent Fulltext inactive', 1, '299,399,392,493'),
-('Zweiter Advent', 'Zweiter Advent Fulltext', 'Zweiter Advent Fulltext inactive', 2, '77,263,153,329'),
-('Dritter Advent', 'Dritter Advent Fulltext', 'Dritter Advent Fulltext inactive', 3, '499,748,579,832');
-
 ALTER TABLE `#__agadvents_details` ADD COLUMN  `access` int(10) unsigned NOT NULL DEFAULT 0 AFTER `alias`;
 
 ALTER TABLE `#__agadvents_details` ADD KEY `idx_access` (`access`);
