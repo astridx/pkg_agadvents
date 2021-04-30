@@ -1,19 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
 <extension type="plugin" group="sampledata" method="upgrade">
 	<name>plg_sampledata_agadvents</name>
-	<creationDate>[DATE]</creationDate>
-	<author>[AUTHOR]</author>
-	<authorEmail>[AUTHOR_EMAIL]</authorEmail>
-	<authorUrl>[AUTHOR_URL]</authorUrl>
-	<copyright>[COPYRIGHT]</copyright>
-	<license>GNU General Public License version 2 or later;</license>
-	<version>__BUMP_VERSION__</version>
+	<author>Astrid Günther</author>
+	<creationDate>##DATE##</creationDate>
+	<copyright>(C) ##YEAR## Astrid Günther. All rights reserved.</copyright>
+	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>info@astrid-guenther.de</authorEmail>
+	<authorUrl>www.astrid-guenther.de</authorUrl>
+	<version>##VERSION##</version>
 	<description>PLG_SAMPLEDATA_AGADVENTS_XML_DESCRIPTION</description>
 	<files>
 		<filename plugin="agadvents">agadvents.php</filename>
-		<folder>language</folder>
-		<filename>data.json</filename>
-		<folder>language</folder>
+		##FILES##
 	</files>
 	<config>
 		<fields name="params">

@@ -63,24 +63,6 @@ class PlgSampledataAgadvents extends CMSPlugin
 	 */
 	protected $stepsData; 
 
-	public function __construct(&$subject, $config = array()) {
-		// https://github.com/dgrammatiko/sloth-pkg/blob/main/plg_sampledata/sloth.php
-		if (file_exists(__DIR__ . '/data.json')) {
-			try {
-				$json = file_get_contents(__DIR__ . '/data.json');
-				$data = json_decode($json);
-				$this->pluginData = $data->plugin;
-				$this->stepsData = $data->steps;
-		  	} catch (\Exception $e) {
-				new \Exception('Plugin doesn\'t have valid data');
-		  	}
-		}
-	
-		parent::__construct($subject, $config);
-	
-		$this->user   = Factory::getUser();
-	}
-
 	/**
 	 * Get an overview of the proposed sampledata.
 	 *
@@ -114,23 +96,27 @@ class PlgSampledataAgadvents extends CMSPlugin
 	 */
 	public function onAjaxSampledataApplyStep1()
 	{
+		$user = Factory::getUser();
 		$categoryModel = $this->app->bootComponent('com_categories')
 			->getMVCFactory()->createModel('Category', 'Administrator');
 
 		$category = [
-			'title'           => 'Weihnachten ' . date('Y'),
-			'parent_id'       => 1,
-			'id'              => 0,
-			'published'       => 1,
-			'access'          => 1,
-			'created_user_id' => $this->user->id,
-			'extension'       => 'com_agadvents',
-			'level'           => 1,
-			'alias'           => 'weihnachten'. date('Y'),
-			'associations'    => array(),
-			'description'     => '',
-			'language'        => '*',
-			'params'          => '{}'
+			'title' => 'Weihnachten ' . date('Y'),
+			'parent_id' => 1,
+			'id' => 0,
+			'published' => 1,
+			'access' => 1,
+			'created_user_id' => $user->id,
+			'extension' => 'com_agadvents',
+			'level' => 1,
+			'alias' => 'weihnachten'. date('Y'),
+			'associations' => array(),
+			'description' => '',
+			'language' => '*',
+			'params'       => array(
+				'image'=> 'plugins/sampledata/agadvents/images/calendar.jpg',
+				'image_alt' => Text::_('PLG_SAMPLEDATA_AGADVENTS_CATEGORY_INTROIMAGE_ALT')
+			),
 		];
 
 		try
@@ -162,7 +148,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 
 			$item = [
 				'name'  => 'Tag '. $i,
-				'alias'    => 'taga'. $i,
+				'alias'    => 'tag'. $i,
 				'catid'    => $catId,
 				'fulltext' => Text::_('PLG_SAMPLEDATA_AGADVENTS_FULL_TEXT') . $i,
 				'fulltext_no' => Text::_('PLG_SAMPLEDATA_AGADVENTS_FULL_TEXT_NO') . $i,
@@ -245,40 +231,4 @@ class PlgSampledataAgadvents extends CMSPlugin
 
 		return $response;		
 	}
-
-
-
-
-	/**
-	 * Final step to show completion of sampledata.
-	 *
-	 * @return  array or void  Will be converted into the JSON response to the module.
-	 *
-	 * @since  __BUMP_VERSION__
-	 */
-	private function copyFiles() {
-		// https://github.com/dgrammatiko/sloth-pkg/blob/main/plg_sampledata/sloth.php
-		$zip = new \ZipArchive;
-		if (is_file(__DIR__ . '/zips/images.zip')) {
-		  if ($zip->open(__DIR__ . '/zips/images.zip') === TRUE) {
-			$zip->extractTo(JPATH_ROOT . '/images');
-			$zip->close();
-		  } else {
-			$msg[] = 'images.zip';
-		  }
-		}
-		if (is_file(__DIR__ . '/zips/cached-resp-images.zip')) {
-		  if ($zip->open(__DIR__ . '/zips/cached-resp-images.zip') === TRUE) {
-			$zip->extractTo(JPATH_ROOT . '/media');
-			$zip->close();
-		  } else {
-			$msg[] = $msg[] = 'cached-resp-images.zip';
-		  }
-		}
-	
-		if (count($msg)) {
-		  self::message(false, Text::_('JERROR'), 0, implode(', ', $msg));
-		}
-		return self::message(true,  Text::_($this->pluginData->strings->FILES_COPIED, 1, 'x'));
-	  }	
 }

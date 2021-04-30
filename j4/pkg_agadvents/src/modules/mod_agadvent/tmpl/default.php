@@ -8,8 +8,24 @@
  */
 
 \defined('_JEXEC') or die;
+?>
 
-echo '[PROJECT_NAME]' . $testtext . '<br />' . $category . '<br />' . $mode . '<br />' . $test;
+
+<ul>
+<?php foreach ($list as $i => $item) : ?>
+  <?php if (true) : ?>
+    <li class="" >
+
+    <div class="">
+      <?php echo $item->name; ?>
+      <?php echo $item->cords; ?>
+    </div>
+
+  </li>
+  <?php endif; ?>
+<?php endforeach; ?>
+</ul>
+
 ?>
 <figure id="imagemap">
 <svg viewBox="0 0 1536 1024" >

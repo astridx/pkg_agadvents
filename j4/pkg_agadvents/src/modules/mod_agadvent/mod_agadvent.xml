@@ -25,6 +25,7 @@
 					name="catid"
 					type="category"
 					label="JCATEGORY"
+					multiple="false"
 					description="MOD_AGADVENTS_FIELD_CATEGORY_DESC"
 					extension="com_agadvents"
 					filter="intarray"
