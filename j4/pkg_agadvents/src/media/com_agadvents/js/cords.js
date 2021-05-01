@@ -4,8 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	var catimage = document.getElementById('cordsmap').getAttribute('data-catimage');
 	var latlngfield = document.getElementById('jform_cords');
 	var oldcords = latlngfield.value;
-	var newcords = latlngfield.value;
-	var editableLayers = new L.FeatureGroup();
+	var newcords;
 	var editableLayers = new L.FeatureGroup();
 
 	var center = [500, 500];
@@ -17,11 +16,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 
 	map.on('load', function (e) {
-		//var polygon = L.polygon(cords, {color: 'red'}).addTo(editableLayers);
-		var cords = oldcords.split(" ");
+		var cords = oldcords.replaceAll(", ", ",").split(" ");
 		var cordsArray = new Array();
+
 		for (let i = 0; i < cords.length; i++) {
+			if(cords[i] !== ""){
 			cordsArray.push(cords[i].split(","));
+			}
 		}
 		
 		var startpolygon = L.polygon(cordsArray, { color: 'red' }).addTo(editableLayers);
@@ -81,6 +82,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		editableLayers.eachLayer(function (layer) {
 			editableLayers.removeLayer(layer);
+			latlngfield.value = newcords.replace("undefined", "");
+			newcords = "";
 		});
 
 		editableLayers.addLayer(layer);
@@ -89,6 +92,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	map.on('click', function (e) {
 		//alert(e.latlng.toString().replace(")", " ").replace("LatLng(", " "));
+		newcords = newcords + e.latlng.toString().replace(")", " ").replace("LatLng(", " ");
+
 	});
 
 });

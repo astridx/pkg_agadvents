@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	  if (document.formvalidator) {
 		document.formvalidator.setHandler('validatecords', function (value) {
 		  var returnedValue = false
-		  var regex = /^([0-9, ]+)$/i
+		  var regex = /^([0-9, .]+)$/i
 		  if (regex.test(value)) returnedValue = true
 		  return returnedValue
 		})
