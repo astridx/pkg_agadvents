@@ -32,7 +32,7 @@ $wa->useStyle('com_agadvents.leaflet.css')
 	->useScript('com_agadvents.leaflet')
 	->useScript('com_agadvents.leaflet.draw')
 	->useScript('com_agadvents.cords')
-	->useScript('com_agadvents.admin-agadvents-letter');
+	->useScript('com_agadvents.validatecords');
 
 $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 ?>

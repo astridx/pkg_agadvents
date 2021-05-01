@@ -59,42 +59,14 @@
 		/>
 
 		<field
-			name="number"
-			type="number"
-			label="COM_AGADVENTS_FIELD_NUMBER_LABEL"
-			filter="unset"
-			default="0"
-		/>
-
-		<field
 			name="cords"
 			type="text"
 			validate="Cords"
-			class="validate-cords"
-			label="COM_AGADVENTS_FIELD_NAME_LABEL"
+			class="validate-validatecords"
+			label="COM_AGADVENTS_FIELD_CORDS_LABEL"
 			size="40"
 			required="true"
 		 />
-
-		<field
-			name="start_date"
-			type="calendar"
-			label="COM_AGADVENTS_FIELD_PUBLISH_UP_LABEL"
-			translateformat="true"
-			showtime="true"
-			size="22"
-			filter="user_utc"
-		/>
-
-		<field
-			name="end_date"
-			type="calendar"
-			label="COM_AGADVENTS_FIELD_PUBLISH_DOWN_LABEL"
-			translateformat="true"
-			showtime="true"
-			size="22"
-			filter="user_utc"
-		/>
 
 		<field
 			name="language"
