@@ -6,6 +6,16 @@
   "license": "GPL-2.0-or-later",
   "assets": [
     {
+      "name": "com_agadvents.leaflet.css",
+      "type": "style",
+      "uri": "com_agadvents/leaflet.css"
+    },
+    {
+      "name": "com_agadvents.leaflet.draw.css",
+      "type": "style",
+      "uri": "com_agadvents/leaflet.draw.css"
+    },
+    {
       "name": "com_agadvents.admin-agadvents-letter",
       "type": "script",
       "uri": "com_agadvents/admin-agadvents-letter.js",
@@ -22,6 +32,39 @@
       "uri": "com_agadvents/admin-agadvents-modal.js",
       "dependencies": [
         "core"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    },
+    {
+      "name": "com_agadvents.leaflet",
+      "type": "script",
+      "uri": "com_agadvents/leaflet.js",
+      "dependencies": [
+        "core"
+      ],
+      "attributes": {
+        "defer": false
+      }
+    },
+    {
+      "name": "com_agadvents.leaflet.draw",
+      "type": "script",
+      "uri": "com_agadvents/leaflet.draw.js",
+      "dependencies": [
+        "com_agadvents.leaflet"
+      ],
+      "attributes": {
+        "defer": true
+      }
+    },
+    {
+      "name": "com_agadvents.cords",
+      "type": "script",
+      "uri": "com_agadvents/cords.js",
+      "dependencies": [
+        "com_agadvents.leaflet.draw"
       ],
       "attributes": {
         "defer": true

@@ -109,7 +109,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 			'created_user_id' => $user->id,
 			'extension' => 'com_agadvents',
 			'level' => 1,
-			'alias' => 'weihnachten2'. date('Y'),
+			'alias' => 'weihnachten'. date('Y'),
 			'associations' => array(),
 			'description' => '',
 			'language' => '*',
@@ -148,7 +148,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 
 			$item = [
 				'name'  => 'Tag '. $i,
-				'alias'    => 'tag2'. $i,
+				'alias'    => 'tag'. $i,
 				'catid'    => $catId,
 				'fulltext' => Text::_('PLG_SAMPLEDATA_AGADVENTS_FULL_TEXT') . $i,
 				'fulltext_no' => Text::_('PLG_SAMPLEDATA_AGADVENTS_FULL_TEXT_NO') . $i,

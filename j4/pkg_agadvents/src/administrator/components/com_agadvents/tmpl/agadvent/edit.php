@@ -25,8 +25,13 @@ $this->ignore_fieldsets = ['item_associations'];
 $this->useCoreUI = true;
 
 $wa = $this->document->getWebAssetManager();
-$wa->useScript('keepalive')
-	->useScript('form.validate')
+$wa->useStyle('com_agadvents.leaflet.css')
+	->useStyle('com_agadvents.leaflet.draw.css')
+	->useScript('keepalive')
+	->useScript('form.validate')	
+	->useScript('com_agadvents.leaflet')
+	->useScript('com_agadvents.leaflet.draw')
+	->useScript('com_agadvents.cords')
 	->useScript('com_agadvents.admin-agadvents-letter');
 
 $layout  = 'edit';
@@ -52,11 +57,15 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 							<div class="col-lg-12">
 								<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_CORDS'); ?></small>
 								<?php echo $this->getForm()->renderField('cords'); ?>
+								<div>
+									<div id="cordsmap" style="height: 400px;"></div>
+								</div>
 							</div>
+							<hr>
 							<hr>
 							<div class="col-lg-12">
 								<div class="col-md-4">
-									<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_SHOWINACTIVE_TIME'); ?></small>
+									<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_SHOWINACTIVE'); ?></small>
 									<?php echo $this->getForm()->renderField('showinactive'); ?>
 								</div>
 								<div class="col-md-8">
