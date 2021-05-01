@@ -5,12 +5,8 @@ CREATE TABLE IF NOT EXISTS `#__agadvents_details` (
 
   `fulltext` mediumtext NOT NULL,
   `fulltext_no` mediumtext NOT NULL,
-  `number` tinyint(1) NOT NULL DEFAULT 0,
 
   `cords` varchar(255) NOT NULL DEFAULT '',
-
-  `start_date` datetime,
-  `end_date` datetime,
 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_unicode_ci;

@@ -40,20 +40,30 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 
 		<?php echo HTMLHelper::_('uitab.addTab', 'myTab', 'details', empty($this->item->id) ? Text::_('COM_AGADVENTS_NEW_AGADVENT') : Text::_('COM_AGADVENTS_EDIT_AGADVENT')); ?>
 		<div class="row">
-			<div class="col-md-9">
-				<div class="row">
-					<div class="col-md-6">
-						<?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_NUMBER'); ?>
-						<?php echo $this->getForm()->renderField('number'); ?>
-						<?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_CORDS'); ?>
-						<?php echo $this->getForm()->renderField('cords'); ?>
-						<?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_FULLTEXT'); ?>
-						<?php echo $this->getForm()->renderField('fulltext'); ?>
-						<?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_FULLTEXT_INACTIVE'); ?>
-						<?php echo $this->getForm()->renderField('fulltext_no'); ?>
-						<?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_NUMBER'); ?>
-						<?php echo $this->getForm()->renderField('start_date'); ?>
-						<?php echo $this->getForm()->renderField('end_date'); ?>
+			<div class="col-lg-9">
+				<div class="card">
+					<div class="card-body">
+						<div class="row">
+							<div class="col-md-12">
+								<?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_FULLTEXT'); ?>
+								<?php echo $this->getForm()->renderField('fulltext'); ?>
+							</div>
+							<hr>
+							<div class="col-lg-12">
+								<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_CORDS'); ?></small>
+								<?php echo $this->getForm()->renderField('cords'); ?>
+							</div>
+							<hr>
+							<div class="col-lg-12">
+								<div class="col-md-4">
+									<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_SHOWINACTIVE_TIME'); ?></small>
+									<?php echo $this->getForm()->renderField('showinactive'); ?>
+								</div>
+								<div class="col-md-8">
+									<?php echo $this->getForm()->renderField('fulltext_no'); ?>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>

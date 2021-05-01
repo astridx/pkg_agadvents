@@ -39,11 +39,23 @@
 		/>
 
 		<field
+			name="showinactive"
+			type="radio"
+			layout="joomla.form.field.radio.switcher"
+			label="COM_AGADVENTS_FIELD_SHOWINACTIVE_LABEL"
+			default="0"
+			>
+			<option value="0">JNO</option>
+			<option value="1">JYES</option>
+		</field>
+
+		<field
 			name="fulltext_no"
 			type="editor"
 			label="COM_AGADVENTS_FIELD_FULLTEXT_INACTIVE_LABEL"
 			filter="JComponentHelper::filterText"
 			buttons="true"
+			showon="showinactive:1"
 		/>
 
 		<field

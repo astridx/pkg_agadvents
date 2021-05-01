@@ -26,12 +26,12 @@
 <?php endforeach; ?>
 </ul>
 
-?>
+
 <figure id="imagemap">
 <svg viewBox="0 0 1536 1024" >
   <defs>
     <style>
-      rect:hover {
+      polygon:hover {
 	    fill: white;
 	    opacity:0.5;
 	  }
@@ -43,7 +43,7 @@
   </image>	
   
   <a xlink:href="https://de.wikipedia.org/wiki/George_Washington">
-    <rect x="300" y="125" opacity="0" width="250" height="300" />
+    <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
   </a>
   <a xlink:href="https://de.wikipedia.org/wiki/Thomas_Jefferson">
     <rect x="550" y="225" opacity="0" width="200" height="300" />
