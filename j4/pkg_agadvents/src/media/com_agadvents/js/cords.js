@@ -1,17 +1,19 @@
 document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 
-
+	var catimage = document.getElementById('cordsmap').getAttribute('data-catimage');
+	console.log(catimage);
 
 	var center = [500, 500];
 
 	// Create the map
 	var map = L.map('cordsmap', {
-		crs: L.CRS.Simple
+		crs: L.CRS.Simple,
+		minZoom: -5
 	}).setView(center, 6);
 
 	var bounds = [[0, 0], [1000, 1000]];
-	var image = L.imageOverlay('https://leafletjs.com/examples/crs-simple/uqm_map_400px.png', bounds).addTo(map);
+	var image = L.imageOverlay(catimage, bounds).addTo(map);
 	map.fitBounds(bounds);
 
 	// Initialise the FeatureGroup to store editable layers

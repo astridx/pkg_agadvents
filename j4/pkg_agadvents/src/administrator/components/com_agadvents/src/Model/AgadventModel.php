@@ -18,6 +18,8 @@ use Joomla\CMS\Language\LanguageHelper;
 use Joomla\Database\ParameterType;
 use Joomla\Utilities\ArrayHelper;
 use Joomla\CMS\Helper\TagsHelper;
+use Joomla\CMS\Categories\Categories;
+use Joomla\CMS\Uri\Uri;
 
 /**
  * Item Model for a Agadvent.
@@ -56,9 +58,9 @@ class AgadventModel extends AdminModel
 	 */
 	protected $batch_commands = [
 		'assetgroup_id' => 'batchAccess',
-		'language_id'   => 'batchLanguage',
-		'tag'           => 'batchTag',
-		'user_id'       => 'batchUser',
+		'language_id' => 'batchLanguage',
+		'tag' => 'batchTag',
+		'user_id' => 'batchUser',
 	];
 
 	/**
@@ -99,6 +101,23 @@ class AgadventModel extends AdminModel
 		$this->preprocessData($this->typeAlias, $data);
 
 		return $data;
+	}
+
+	/**
+	 * Method to get the image of the categorie.
+	 *
+	 * @return  string  The image of the categorie.
+	 *
+	 * @since   __BUMP_VERSION__
+	 */
+	public function getCatimage()
+	{
+		$catid = $this->getItem()->catid;
+		$categories = Categories::getInstance('com_agadvents', []);
+		$category = $categories->get($this->getItem()->catid);
+		$catimage = Uri::root() . "/" . $category->getParams()->get('image');
+
+		return $catimage;
 	}
 
 	/**

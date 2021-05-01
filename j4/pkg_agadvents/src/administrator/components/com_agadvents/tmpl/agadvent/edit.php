@@ -34,7 +34,6 @@ $wa->useStyle('com_agadvents.leaflet.css')
 	->useScript('com_agadvents.cords')
 	->useScript('com_agadvents.admin-agadvents-letter');
 
-$layout  = 'edit';
 $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 ?>
 <form action="<?php echo Route::_('index.php?option=com_agadvents&layout=' . $layout . $tmpl . '&id=' . (int) $this->item->id); ?>" method="post" name="adminForm" id="agadvent-form" class="form-validate">
@@ -58,7 +57,12 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 								<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_CORDS'); ?></small>
 								<?php echo $this->getForm()->renderField('cords'); ?>
 								<div>
-									<div id="cordsmap" style="height: 400px;"></div>
+									<div 
+										id="cordsmap" 
+										style="height: 400px;"
+										data-catimage=<?php echo $this->catimage; ?>
+									>
+									</div>
 								</div>
 							</div>
 							<hr>

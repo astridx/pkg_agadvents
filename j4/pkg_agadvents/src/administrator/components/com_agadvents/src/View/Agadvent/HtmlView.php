@@ -51,6 +51,7 @@ class HtmlView extends BaseHtmlView
 	{
 		$this->form  = $this->get('Form');
 		$this->item = $this->get('Item');
+		$this->catimage = $this->get('Catimage');
 
 		// If we are forcing a language in modal (used for associations).
 		if ($this->getLayout() === 'modal' && $forcedLanguage = Factory::getApplication()->input->get('forcedLanguage', '', 'cmd')) {
