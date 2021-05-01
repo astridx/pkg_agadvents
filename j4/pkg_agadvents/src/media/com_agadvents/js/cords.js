@@ -2,7 +2,11 @@ document.addEventListener('DOMContentLoaded', function () {
 	"use strict";
 
 	var catimage = document.getElementById('cordsmap').getAttribute('data-catimage');
-	console.log(catimage);
+	var latlngfield = document.getElementById('jform_cords');
+	var oldcords = latlngfield.value;
+	var newcords = latlngfield.value;
+	var editableLayers = new L.FeatureGroup();
+	var editableLayers = new L.FeatureGroup();
 
 	var center = [500, 500];
 
@@ -10,14 +14,28 @@ document.addEventListener('DOMContentLoaded', function () {
 	var map = L.map('cordsmap', {
 		crs: L.CRS.Simple,
 		minZoom: -5
-	}).setView(center, 6);
+	});
+
+	map.on('load', function (e) {
+		//var polygon = L.polygon(cords, {color: 'red'}).addTo(editableLayers);
+		var cords = oldcords.split(" ");
+		var cordsArray = new Array();
+		for (let i = 0; i < cords.length; i++) {
+			cordsArray.push(cords[i].split(","));
+		}
+		
+		var startpolygon = L.polygon(cordsArray, { color: 'red' }).addTo(editableLayers);
+
+	});
+
+	map.setView(center, 6);
+	map.addLayer(editableLayers);
 
 	var bounds = [[0, 0], [1000, 1000]];
 	var image = L.imageOverlay(catimage, bounds).addTo(map);
 	map.fitBounds(bounds);
 
 	// Initialise the FeatureGroup to store editable layers
-	var editableLayers = new L.FeatureGroup();
 	map.addLayer(editableLayers);
 
 
@@ -54,19 +72,23 @@ document.addEventListener('DOMContentLoaded', function () {
 	map.addControl(drawControl);
 
 
-	var editableLayers = new L.FeatureGroup();
-	map.addLayer(editableLayers);
 
 
 
 
 	map.on('draw:created', function (e) {
 		var layer = e.layer;
+
 		editableLayers.eachLayer(function (layer) {
 			editableLayers.removeLayer(layer);
-		});		
+		});
 
 		editableLayers.addLayer(layer);
+	});
+
+
+	map.on('click', function (e) {
+		//alert(e.latlng.toString().replace(")", " ").replace("LatLng(", " "));
 	});
 
 });

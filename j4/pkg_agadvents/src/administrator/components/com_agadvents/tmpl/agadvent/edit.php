@@ -68,13 +68,9 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 							<hr>
 							<hr>
 							<div class="col-lg-12">
-								<div class="col-md-4">
-									<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_SHOWINACTIVE'); ?></small>
-									<?php echo $this->getForm()->renderField('showinactive'); ?>
-								</div>
-								<div class="col-md-8">
-									<?php echo $this->getForm()->renderField('fulltext_no'); ?>
-								</div>
+								<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_SHOWINACTIVE'); ?></small>
+								<?php echo $this->getForm()->renderField('showinactive'); ?>
+								<?php echo $this->getForm()->renderField('fulltext_no'); ?>
 							</div>
 						</div>
 					</div>
