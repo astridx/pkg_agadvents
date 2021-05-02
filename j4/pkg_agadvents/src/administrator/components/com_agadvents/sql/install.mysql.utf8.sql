@@ -6,7 +6,8 @@ CREATE TABLE IF NOT EXISTS `#__agadvents_details` (
   `fulltext` mediumtext NOT NULL,
   `fulltext_no` mediumtext NOT NULL,
 
-  `cords` varchar(255) NOT NULL DEFAULT '',
+  `cords` mediumtext NOT NULL,
+  `cordsimagemap` mediumtext NOT NULL,
 
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 DEFAULT COLLATE=utf8mb4_unicode_ci;

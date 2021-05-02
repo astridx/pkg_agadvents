@@ -59,6 +59,7 @@ class AgadventsModel extends ListModel
 					$db->quoteName('a.name'),
 					$db->quoteName('a.alias'),
 					$db->quoteName('a.cords'),
+					$db->quoteName('a.cordsimagemap'),
 					$db->quoteName('a.fulltext_no'),
 					$db->quoteName('a.fulltext'),
 					$db->quoteName('a.checked_out'),

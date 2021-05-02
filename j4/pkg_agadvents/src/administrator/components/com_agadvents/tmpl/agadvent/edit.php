@@ -56,6 +56,7 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 							<div class="col-lg-12">
 								<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_CORDS'); ?></small>
 								<?php echo $this->getForm()->renderField('cords'); ?>
+								<?php echo $this->getForm()->renderField('cordsimagemap'); ?>
 								<div>
 									<div 
 										id="cordsmap" 

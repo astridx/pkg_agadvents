@@ -65,7 +65,17 @@
 			class="validate-validatecords"
 			label="COM_AGADVENTS_FIELD_CORDS_LABEL"
 			size="40"
-			required="true"
+			default=""
+		 />
+
+		<field
+			name="cordsimagemap"
+			type="text"
+			validate="Cords"
+			class="validate-validatecords"
+			label="COM_AGADVENTS_FIELD_CORDS_LABEL"
+			size="40"
+			default="0"
 		 />
 
 		<field

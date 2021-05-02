@@ -21,6 +21,8 @@ use Joomla\CMS\Router\Route;
 use Joomla\Component\Content\Administrator\Extension\ContentComponent;
 use Joomla\Component\Content\Site\Helper\RouteHelper;
 use Joomla\String\StringHelper;
+use Joomla\CMS\Categories\Categories;
+use Joomla\CMS\Uri\Uri;
 
 /**
  * Helper for mod_agadvent
@@ -41,6 +43,23 @@ abstract class AgadventHelper
 	{
 		return 'AgadventHelpertest';
 	}
+
+	/**
+	 * Method to get the image of the categorie.
+	 *
+	 * @return  string  The image of the categorie.
+	 *
+	 * @since   __BUMP_VERSION__
+	 */
+	public static function getCatimage($catid)
+	{
+		$categories = Categories::getInstance('com_agadvents', []);
+		$category = $categories->get($catid);
+		$catimage = Uri::root() . "/" . $category->getParams()->get('image');
+
+		return $catimage;
+	}
+
 	/**
 	 * Get a list of articles from a specific category
 	 *

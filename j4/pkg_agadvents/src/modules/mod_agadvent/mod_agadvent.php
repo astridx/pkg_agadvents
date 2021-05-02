@@ -18,6 +18,7 @@ $input = $app->input;
 $mode = $params->get('mode', 'image');
 $test = $params->get('test', 1);
 $idbase = $params->get('catid');
+$catimage = AgadventHelper::getCatimage($idbase[0]);
 
 $cacheid = md5(serialize(array ($idbase, $module->module, $module->id)));
 

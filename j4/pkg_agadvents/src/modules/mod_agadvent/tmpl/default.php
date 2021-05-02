@@ -8,54 +8,41 @@
  */
 
 \defined('_JEXEC') or die;
+
+use Joomla\CMS\Language\Text;
+
+$info = array();
+$info[0] = 0;
+$info[1] = 0;
+$info = getimagesize($catimage);
 ?>
 
-
-<ul>
-<?php foreach ($list as $i => $item) : ?>
-  <?php if (true) : ?>
-    <li class="" >
-
-    <div class="">
-      <?php echo $item->name; ?>
-      <?php echo $item->cords; ?>
-    </div>
-
-  </li>
-  <?php endif; ?>
-<?php endforeach; ?>
-</ul>
-
-
-<figure id="imagemap">
-<svg viewBox="0 0 1536 1024" >
+<figure style="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_STYLE_FIGURE'); ?>" id="imagemap">
+<svg viewBox="0 0 <?php echo $info[0]; ?> <?php echo $info[1]; ?>" >
   <defs>
     <style>
       polygon:hover {
 	    fill: white;
 	    opacity:0.5;
 	  }
+    polygon {
+	    fill: white;
+	    opacity:0.2;
+	  }
     </style>
   </defs> 
  
-  <image width="1536" height="1024" xlink:href="https://picsum.photos/1536/1024">
-    <title>Mount Rushmore National Memorial</title>
-  </image>	
-  
-  <a xlink:href="https://de.wikipedia.org/wiki/George_Washington">
-    <polygon points="200,10 250,190 160,210" style="fill:lime;stroke:purple;stroke-width:1" />
+  <image xlink:href="<?php echo $catimage; ?>" alt="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_ALT'); ?>" />
+    
+  <?php foreach ($list as $i => $item) : ?>
+  <?php if (true) : ?>  
+  <a xlink:href="<?php echo $item->cordsimagemap; ?>">
+    <polygon points="<?php echo $item->cordsimagemap; ?>" style="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_STYLE_POLYGONE'); ?>" />
   </a>
-  <a xlink:href="https://de.wikipedia.org/wiki/Thomas_Jefferson">
-    <rect x="550" y="225" opacity="0" width="200" height="300" />
-  </a>
-  <a xlink:href="https://de.wikipedia.org/wiki/Theodore_Roosevelt">
-    <rect x="750" y="375" opacity="0" width="200" height="300" />
-  </a>
-  <a xlink:href="https://de.wikipedia.org/wiki/Abraham_Lincoln">
-    <rect x="999" y="375" opacity="0" width="200" height="300" />
-  </a>
+  <?php endif; ?>
+<?php endforeach; ?>
+
 </svg>
-  <figcaption>Mount Rushmore National Memorial - Klicken Sie auf die Köpfe.</figcaption>
+  <figcaption><?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_FIGCAPTION'); ?></figcaption>
 </figure>
 
-hhh

@@ -3,11 +3,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
 	var catimage = document.getElementById('cordsmap').getAttribute('data-catimage');
 	var latlngfield = document.getElementById('jform_cords');
+	var lnglatfield = document.getElementById('jform_cordsimagemap');
 	var oldcords = latlngfield.value;
-	var newcords;
+	var newcords ="";
+	var newcordsimagemap="";
 	var editableLayers = new L.FeatureGroup();
 
-	var center = [500, 500];
+	var newImg = new Image();
+	newImg.src = catimage;
+	var height = newImg.height;
+    var width = newImg.width;
+	//alert (height + " " + width);
+	var center = [height/2, width/2];
 
 	// Create the map
 	var map = L.map('cordsmap', {
@@ -16,12 +23,13 @@ document.addEventListener('DOMContentLoaded', function () {
 	});
 
 	map.on('load', function (e) {
-		var cords = oldcords.replaceAll(", ", ",").split(" ");
+		var cords = oldcords.split(" ... ")[0].replaceAll(", ", ",").replaceAll("  ", " ").split(" ");
 		var cordsArray = new Array();
 
 		for (let i = 0; i < cords.length; i++) {
 			if(cords[i] !== ""){
-			cordsArray.push(cords[i].split(","));
+				cordsArray.push(cords[i].split(","));
+				console.log(cords[i].split(","));
 			}
 		}
 		
@@ -32,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
 	map.setView(center, 6);
 	map.addLayer(editableLayers);
 
-	var bounds = [[0, 0], [1000, 1000]];
+	var bounds = [[0, 0], [height,width]];
 	var image = L.imageOverlay(catimage, bounds).addTo(map);
 	map.fitBounds(bounds);
 
@@ -82,8 +90,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 		editableLayers.eachLayer(function (layer) {
 			editableLayers.removeLayer(layer);
-			latlngfield.value = newcords.replace("undefined", "");
+			latlngfield.value = newcords;
+			lnglatfield.value = newcordsimagemap;
 			newcords = "";
+			newcordsimagemap = "";
 		});
 
 		editableLayers.addLayer(layer);
@@ -91,9 +101,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
 	map.on('click', function (e) {
-		//alert(e.latlng.toString().replace(")", " ").replace("LatLng(", " "));
-		newcords = newcords + e.latlng.toString().replace(")", " ").replace("LatLng(", " ");
+		newcordsimagemap = newcordsimagemap + " " + parseInt(e.latlng.lng) + "," + (parseInt(height)-parseInt(e.latlng.lat)) + " ";
+		newcords = newcords + " " + parseInt(e.latlng.lat) + "," + parseInt(e.latlng.lng) + " ";
 
 	});
-
+	
+	
 });
