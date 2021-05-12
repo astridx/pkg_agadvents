@@ -92,23 +92,17 @@ class AgadventsModel extends ListModel
 		// Filter by a single or group of agadvents.
 		$agadventId = $this->getState('filter.agadvent_id');
 
-		if (is_numeric($agadventId))
-		{
+		if (is_numeric($agadventId)) {
 			$agadventId = (int) $agadventId;
 			$type = $this->getState('filter.agadvent_id.include', true) ? ' = ' : ' <> ';
 			$query->where($db->quoteName('a.id') . $type . ':agadventId')
 				->bind(':agadventId', $agadventId, ParameterType::INTEGER);
-		}
-		elseif (is_array($agadventId))
-		{
+		} else if (is_array($agadventId)) {
 			$agadventId = ArrayHelper::toInteger($agadventId);
 
-			if ($this->getState('filter.agadvent_id.include', true))
-			{
+			if ($this->getState('filter.agadvent_id.include', true)) {
 				$query->whereIn($db->quoteName('a.id'), $agadventId);
-			}
-			else
-			{
+			} else {
 				$query->whereNotIn($db->quoteName('a.id'), $agadventId);
 			}
 		}
@@ -116,15 +110,13 @@ class AgadventsModel extends ListModel
 		// Filter by a single or group of categories
 		$categoryId = $this->getState('filter.category_id');
 
-		if (is_numeric($categoryId))
-		{
+		if (is_numeric($categoryId)) {
 			$type = $this->getState('filter.category_id.include', true) ? ' = ' : ' <> ';
 
 			// Add subcategory check
 			$includeSubcategories = $this->getState('filter.subcategories', false);
 
-			if ($includeSubcategories)
-			{
+			if ($includeSubcategories) {
 				$categoryId = (int) $categoryId;
 				$levels     = (int) $this->getState('filter.max_category_levels', 1);
 
@@ -142,8 +134,7 @@ class AgadventsModel extends ListModel
 
 				$query->bind(':subCategoryId', $categoryId, ParameterType::INTEGER);
 
-				if ($levels >= 0)
-				{
+				if ($levels >= 0) {
 					$subQuery->where($db->quoteName('sub.level') . ' <= ' . $db->quoteName('this.level') . ' + :levels');
 					$query->bind(':levels', $levels, ParameterType::INTEGER);
 				}
@@ -153,50 +144,38 @@ class AgadventsModel extends ListModel
 					'(' . $db->quoteName('a.catid') . $type . ':categoryId OR ' . $db->quoteName('a.catid') . ' IN (' . (string) $subQuery . '))'
 				);
 				$query->bind(':categoryId', $categoryId, ParameterType::INTEGER);
-			}
-			else
-			{
+			} else {
 				$query->where($db->quoteName('a.catid') . $type . ':categoryId');
 				$query->bind(':categoryId', $categoryId, ParameterType::INTEGER);
 			}
-		}
-		elseif (is_array($categoryId) && (count($categoryId) > 0))
-		{
+		} else if (is_array($categoryId) && (count($categoryId) > 0)) {
 			$categoryId = ArrayHelper::toInteger($categoryId);
 
-			if (!empty($categoryId))
-			{
-				if ($this->getState('filter.category_id.include', true))
-				{
+			if (!empty($categoryId)) {
+				if ($this->getState('filter.category_id.include', true)) {
 					$query->whereIn($db->quoteName('a.catid'), $categoryId);
-				}
-				else
-				{
+				} else {
 					$query->whereNotIn($db->quoteName('a.catid'), $categoryId);
 				}
 			}
 		}
 
 		// Filter by language
-		if ($this->getState('filter.language'))
-		{
+		if ($this->getState('filter.language')) {
 			$query->whereIn($db->quoteName('a.language'), [Factory::getLanguage()->getTag(), '*'], ParameterType::STRING);
 		}
 
 		// Filter by a single or group of tags.
 		$tagId = $this->getState('filter.tag');
 
-		if (is_array($tagId) && count($tagId) === 1)
-		{
+		if (is_array($tagId) && count($tagId) === 1) {
 			$tagId = current($tagId);
 		}
 
-		if (is_array($tagId))
-		{
+		if (is_array($tagId)) {
 			$tagId = ArrayHelper::toInteger($tagId);
 
-			if ($tagId)
-			{
+			if ($tagId) {
 				$subQuery = $db->getQuery(true)
 					->select('DISTINCT ' . $db->quoteName('agadvents_item_id'))
 					->from($db->quoteName('#__agadvents_detailsitem_tag_map'))
@@ -213,9 +192,7 @@ class AgadventsModel extends ListModel
 					$db->quoteName('tagmap.agadvents_item_id') . ' = ' . $db->quoteName('a.id')
 				);
 			}
-		}
-		elseif ($tagId = (int) $tagId)
-		{
+		} else if ($tagId = (int) $tagId) {
 			$query->join(
 				'INNER',
 				$db->quoteName('#__agadvents_detailsitem_tag_map', 'tagmap'),

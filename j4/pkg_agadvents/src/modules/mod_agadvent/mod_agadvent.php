@@ -20,7 +20,7 @@ $test = $params->get('test', 1);
 $idbase = $params->get('catid');
 $catimage = AgadventHelper::getCatimage($idbase[0]);
 
-$cacheid = md5(serialize(array ($idbase, $module->module, $module->id)));
+$cacheid = md5(serialize([$idbase, $module->module, $module->id]));
 
 $cacheparams = new \stdClass;
 $cacheparams->cachemode = 'id';

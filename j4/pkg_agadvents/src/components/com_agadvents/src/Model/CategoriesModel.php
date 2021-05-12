@@ -77,7 +77,7 @@ class CategoriesModel extends ListModel
 		$this->setState('params', $params);
 
 		$this->setState('filter.published',	1);
-		$this->setState('filter.access',	true);
+		$this->setState('filter.access', true);
 	}
 
 	/**
@@ -109,32 +109,25 @@ class CategoriesModel extends ListModel
 	 */
 	public function getItems()
 	{
-		if ($this->_items === null)
-		{
+		if ($this->_items === null) {
 			$app = Factory::getApplication();
 			$menu = $app->getMenu();
 			$active = $menu->getActive();
 
-			if ($active)
-			{
+			if ($active) {
 				$params = $active->getParams();
-			}
-			else
-			{
+			} else {
 				$params = new Registry;
 			}
 
-			$options = array();
+			$options = [];
 			$options['countItems'] = $params->get('show_cat_items_cat', 1) || !$params->get('show_empty_categories_cat', 0);
 			$categories = Categories::getInstance('Agadvents', $options);
 			$this->_parent = $categories->get($this->getState('filter.parentId', 'root'));
 
-			if (is_object($this->_parent))
-			{
+			if (is_object($this->_parent)) {
 				$this->_items = $this->_parent->getChildren();
-			}
-			else
-			{
+			} else {
 				$this->_items = false;
 			}
 		}
@@ -151,8 +144,7 @@ class CategoriesModel extends ListModel
 	 */
 	public function getParent()
 	{
-		if (!is_object($this->_parent))
-		{
+		if (!is_object($this->_parent)) {
 			$this->getItems();
 		}
 

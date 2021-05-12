@@ -61,7 +61,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 	 *
 	 * @since  __BUMP_VERSION__
 	 */
-	protected $stepsData; 
+	protected $stepsData;
 
 	/**
 	 * Get an overview of the proposed sampledata.
@@ -72,8 +72,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 	 */
 	public function onSampledataGetOverview()
 	{
-		if (!Factory::getUser()->authorise('core.create', 'com_agadvents'))
-		{
+		if (!Factory::getUser()->authorise('core.create', 'com_agadvents')) {
 			return;
 		}
 
@@ -110,24 +109,20 @@ class PlgSampledataAgadvents extends CMSPlugin
 			'extension' => 'com_agadvents',
 			'level' => 1,
 			'alias' => 'weihnachten'. date('Y'),
-			'associations' => array(),
+			'associations' => [],
 			'description' => '',
 			'language' => '*',
-			'params'       => array(
+			'params'       => [
 				'image'=> 'plugins/sampledata/agadvents/images/calendar.jpg',
 				'image_alt' => Text::_('PLG_SAMPLEDATA_AGADVENTS_CATEGORY_INTROIMAGE_ALT')
-			),
+			],
 		];
 
-		try
-		{
-			if (!$categoryModel->save($category))
-			{
+		try {
+			if (!$categoryModel->save($category)) {
 				throw new Exception($categoryModel->getError());
 			}
-		}
-		catch (Exception $e)
-		{
+		} catch (Exception $e) {
 			$response = new stdClass;
 			$response->success = false;
 			$response->message = Text::sprintf('PLG_SAMPLEDATA_AGADVENTS_STEP_FAILED', 1, $e->getMessage());
@@ -142,8 +137,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 		$mvcFactory = $this->app->bootComponent('com_agadvents')->getMVCFactory();
 		$adventsModel = $mvcFactory->createModel('Agadvent', 'Administrator', ['ignore_request' => true]);
 
-		for ($i = 1; $i <= 24; $i++)
-		{
+		for ($i = 1; $i <= 24; $i++) {
 			$adventsModel = $mvcFactory->createModel('Agadvent', 'Administrator', ['ignore_request' => true]);
 
 			$item = [
@@ -160,8 +154,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 				'params'  => '{}'
 			];
 
-			switch ($i)
-			{
+			switch ($i) {
 				case 1:
 					$item['cords'] = ' 1236,22  1036,30  1052,234  1236,234 ';
 					$item['cordsimagemap'] = ' 22,44  30,244  234,228  234,44 ';
@@ -261,15 +254,11 @@ class PlgSampledataAgadvents extends CMSPlugin
 			}
 
 		
-			try
-			{
-				if (!$adventsModel->save($item))
-				{
+			try {
+				if (!$adventsModel->save($item)) {
 					throw new Exception($adventsModel->getError());
 				}
-			}
-			catch (Exception $e)
-			{
+			} catch (Exception $e) {
 				$response = new stdClass;
 				$response->success = false;
 				$response->message = Text::sprintf('PLG_SAMPLEDATA_AGADVENTS_STEP_FAILED', 1, $e->getMessage());
@@ -282,7 +271,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 		$response->success = true;
 		$response->message = Text::_('PLG_SAMPLEDATA_AGADVENTS_STEP1_SUCCESS');
 
-		return $response;		
+		return $response;
 	}
 
 	/**
@@ -298,7 +287,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 		$response->success = true;
 		$response->message = Text::_('PLG_SAMPLEDATA_AGADVENTS_STEP2_SUCCESS');
 
-		return $response;		
+		return $response;
 	}
 
 	/**
@@ -314,7 +303,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 		$response->success = true;
 		$response->message = Text::_('PLG_SAMPLEDATA_AGADVENTS_STEP3_SUCCESS');
 
-		return $response;		
+		return $response;
 	}
 
 	/**
@@ -330,6 +319,6 @@ class PlgSampledataAgadvents extends CMSPlugin
 		$response->success = true;
 		$response->message = Text::_('PLG_SAMPLEDATA_AGADVENTS_STEP4_SUCCESS');
 
-		return $response;		
+		return $response;
 	}
 }

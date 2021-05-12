@@ -76,7 +76,7 @@ abstract class AgadventHelper
 
 		$agadvents = $factory->createModel('Agadvents', 'Site', ['ignore_request' => true]);
 
-		$agadvents->setState('filter.category_id', $params->get('catid')[0]);		
+		$agadvents->setState('filter.category_id', $params->get('catid')[0]);
 
 		return $agadvents->getItems();
 	}
@@ -92,7 +92,7 @@ abstract class AgadventHelper
 	 */
 	public static function _cleanIntrotext($introtext)
 	{
-		$introtext = str_replace(array('<p>', '</p>'), ' ', $introtext);
+		$introtext = str_replace(['<p>', '</p>'], ' ', $introtext);
 		$introtext = strip_tags($introtext, '<a><em><strong>');
 		$introtext = trim($introtext);
 

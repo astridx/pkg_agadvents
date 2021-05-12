@@ -28,7 +28,7 @@ $wa = $this->document->getWebAssetManager();
 $wa->useStyle('com_agadvents.leaflet.css')
 	->useStyle('com_agadvents.leaflet.draw.css')
 	->useScript('keepalive')
-	->useScript('form.validate')	
+	->useScript('form.validate')
 	->useScript('com_agadvents.leaflet')
 	->useScript('com_agadvents.leaflet.draw')
 	->useScript('com_agadvents.cords')
