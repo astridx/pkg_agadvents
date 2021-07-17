@@ -4,7 +4,7 @@
 	<packagename>agosms</packagename>
 	<creationDate>##DATE##</creationDate>
 	<packager>Astrid Günther</packager>
-	<copyright>(C) ##YEAR## Astrid Günther. All rights reserved.</copyright>
+	<copyright>(C) Astrid Günther. All rights reserved.</copyright>
 	<packageremail>info@astrid-guenther.de</packageremail>
 	<packagerurl>www.astrid-guenther.de</packagerurl>
 	<author>Astrid Günther</author>
@@ -23,6 +23,6 @@
 	</files>
 	<changelogurl>https://raw.githubusercontent.com/astridx/pkg_agadvents/master/changelog.xml</changelogurl>
 	<updateservers>
-		<server type="extension" name="Agadvents Update Site">https://raw.githubusercontent.com/astridx/pkg_agadvents/master/agadvents-update.xml</server>
+		<server type="extension" name="Agadvents Update Site">https://raw.githubusercontent.com/astridx/pkg_agadvents/master/agadvents-update4.xml</server>
 	</updateservers>
 </extension>

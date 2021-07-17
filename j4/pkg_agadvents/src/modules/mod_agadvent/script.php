@@ -37,7 +37,7 @@ class mod_agadventInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 */
-	function install($parent)
+	public function install($parent)
 	{
 		echo Text::_('MOD_AGADVENT_INSTALLERSCRIPT_INSTALL');
 
@@ -51,7 +51,7 @@ class mod_agadventInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 */
-	function uninstall($parent)
+	public function uninstall($parent)
 	{
 		echo Text::_('MOD_AGADVENT_INSTALLERSCRIPT_UNINSTALL');
 
@@ -65,7 +65,7 @@ class mod_agadventInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 */
-	function update($parent)
+	public function update($parent)
 	{
 		echo Text::_('MOD_AGADVENT_INSTALLERSCRIPT_UPDATE');
 
@@ -80,7 +80,7 @@ class mod_agadventInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 */
-	function preflight($type, $parent)
+	public function preflight($type, $parent)
 	{
 		// Check for the minimum PHP version before continuing
 		if (!empty($this->minimumPhp) && version_compare(PHP_VERSION, $this->minimumPhp, '<')) {
@@ -109,7 +109,7 @@ class mod_agadventInstallerScript
 	 *
 	 * @return  boolean  True on success
 	 */
-	function postflight($type, $parent)
+	public function postflight($type, $parent)
 	{
 		echo Text::_('MOD_AGADVENT_INSTALLERSCRIPT_POSTFLIGHT');
 
