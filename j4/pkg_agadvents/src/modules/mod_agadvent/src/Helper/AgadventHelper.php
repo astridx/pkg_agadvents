@@ -78,7 +78,19 @@ abstract class AgadventHelper
 
 		$agadvents->setState('filter.category_id', $params->get('catid')[0]);
 
-		return $agadvents->getItems();
+		$items = $agadvents->getItems();
+
+		// Prepare data for display using display options
+		foreach ($items as &$item) {
+			$item->slug = $item->id; // . ':' . $item->alias;
+			if ($params->get('test')) {
+				$item->layout = 'default_test';
+			} else {
+				$item->layout = 'default';
+			}
+		}
+
+		return $items;
 	}
 
 	/**

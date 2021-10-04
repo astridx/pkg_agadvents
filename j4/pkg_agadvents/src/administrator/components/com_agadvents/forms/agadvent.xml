@@ -63,7 +63,7 @@
 			type="text"
 			validate="Cords"
 			class="validate-validatecords"
-			label="COM_AGADVENTS_FIELD_CORDS_LABEL"
+			label="COM_AGADVENTS_FIELD_CORDS_B_LABEL"
 			size="40"
 			default=""
 		 />
@@ -73,7 +73,7 @@
 			type="text"
 			validate="Cords"
 			class="validate-validatecords"
-			label="COM_AGADVENTS_FIELD_CORDS_LABEL"
+			label="COM_AGADVENTS_FIELD_CORDS_F_LABEL"
 			size="40"
 			default="0"
 		 />

@@ -31,7 +31,8 @@ HTMLHelper::_('behavior.core');
 
 						<div class="list-title">
 							<a href="<?php echo Route::_(RouteHelper::getAgadventRoute($item->slug, $item->catid, $item->language)); ?>">
-							<?php echo $item->name; ?></a>
+							<?php echo $item->name; ?>
+							</a>
 							<?php echo $item->event->afterDisplayTitle; ?>
 
 							<?php echo $item->event->beforeDisplayContent; ?>

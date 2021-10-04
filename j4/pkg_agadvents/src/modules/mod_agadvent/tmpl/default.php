@@ -10,6 +10,9 @@
 \defined('_JEXEC') or die;
 
 use Joomla\CMS\Language\Text;
+use Joomla\CMS\Router\Route;
+use Joomla\CMS\Uri\Uri;
+use AgadventNamespace\Component\Agadvents\Site\Helper\RouteHelper;
 
 $info = [];
 $info[0] = 0;
@@ -17,32 +20,49 @@ $info[1] = 0;
 $info = getimagesize($catimage);
 ?>
 
-<figure style="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_STYLE_FIGURE'); ?>" id="imagemap">
-<svg viewBox="0 0 <?php echo $info[0]; ?> <?php echo $info[1]; ?>" >
-  <defs>
-	<style>
-	  polygon:hover {
-		fill: white;
-		opacity:0.5;
-	  }
-	polygon {
-		fill: white;
-		opacity:0.2;
-	  }
-	</style>
-  </defs> 
+<?php if ($test) : ?>
+	<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_TEST'); ?>
+<?php endif; ?>
+
+<?php if ($mode === 'image' || $mode === 'imageandlist') : ?>  
+	<figure style="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_STYLE_FIGURE'); ?>" id="imagemap">
+	<svg viewBox="0 0 <?php echo $info[0]; ?> <?php echo $info[1]; ?>" >
+	<defs>
+		<style>
+		polygon:hover {
+			fill: white;
+			opacity:0.5;
+		}
+		polygon {
+			fill: white;
+			opacity:0.2;
+		}
+		</style>
+	</defs> 
  
-  <image xlink:href="<?php echo $catimage; ?>" alt="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_ALT'); ?>" />
+	<image xlink:href="<?php echo $catimage; ?>" alt="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_ALT'); ?>" />
 	
-  <?php foreach ($list as $i => $item) : ?>
+	<?php foreach ($list as $i => $item) : ?>
 		<?php if (true) : ?>  
-  <a xlink:href="<?php echo $item->cordsimagemap; ?>">
-	<polygon points="<?php echo $item->cordsimagemap; ?>" style="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_STYLE_POLYGONE'); ?>" />
-  </a>
+			<a xlink:href="<?php echo Route::_(RouteHelper::getAgadventRoute($item->slug, $item->catid, $item->language)) . '?layout=' . $item->layout; ?>">
+				<polygon points="<?php echo $item->cordsimagemap; ?>" style="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_STYLE_POLYGONE'); ?>" />
+			</a>
 		<?php endif; ?>
-  <?php endforeach; ?>
+	<?php endforeach; ?>
+	</svg>
+	<figcaption><?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_FIGCAPTION'); ?></figcaption>
+	</figure>
+<?php endif; ?>
 
-</svg>
-  <figcaption><?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_FIGCAPTION'); ?></figcaption>
-</figure>
-
+<?php if ($mode === 'list' || $mode === 'imageandlist') : ?> 
+	<ul>
+		<?php foreach ($list as $i => $item) : ?>
+			<?php if (true) : ?> 
+				<li> 
+				<a href="<?php echo Route::_(RouteHelper::getAgadventRoute($item->slug, $item->catid, $item->language)) . '?layout=' . $item->layout; ?>">
+					<?php echo $item->name; ?>
+				</a>
+			<?php endif; ?>
+		<?php endforeach; ?>
+	</ul>
+<?php endif; ?>

@@ -19,7 +19,7 @@
 		<file type="component" id="com_agadvents">com_agadvents.zip</file>
 		<file type="module" id="mod_agadvent" client="site">mod_agadvent.zip</file>
 		<file type="plugin" id="plg_webservices_agadvents" group="webservices">plg_webservices_agadvents.zip</file>
-		<file type="plugin" id="plg_sampledata_agadvents" group="sampledata">plg_sampledate_agadvents.zip</file>
+		<file type="plugin" id="plg_sampledata_agadvents" group="sampledata">plg_sampledata_agadvents.zip</file>
 	</files>
 	<changelogurl>https://raw.githubusercontent.com/astridx/pkg_agadvents/master/changelog.xml</changelogurl>
 	<updateservers>

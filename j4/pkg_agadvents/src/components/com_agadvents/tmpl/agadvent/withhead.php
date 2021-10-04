@@ -4,15 +4,7 @@
 
 use Joomla\CMS\Language\Text;
 
-echo "<hr>Hier kannst du einen Headertext anzeigen.<hr>";
-
-if ($this->item->params->get('show_name')) {
-	if ($this->Params->get('show_agadvent_name_label')) {
-		echo Text::_('COM_AGADVENTS_NAME') . $this->item->name;
-	} else {
-		echo $this->item->name;
-	}
-}
+echo "<hr>With head.<hr>";
 
 echo $this->item->event->afterDisplayTitle;
 echo $this->item->event->beforeDisplayContent;

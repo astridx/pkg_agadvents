@@ -6,7 +6,6 @@
 	<authorEmail>info@astrid-guenther.de</authorEmail>
 	<authorUrl>www.astrid-guenther.de</authorUrl>
 	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
-	<license>GNU General Public License version 2 or later; see LICENSE.txt</license>
 	<version>##VERSION##</version>
 	<description>MOD_AGADVENT_XML_DESCRIPTION</description>
 	<scriptfile>script.php</scriptfile>

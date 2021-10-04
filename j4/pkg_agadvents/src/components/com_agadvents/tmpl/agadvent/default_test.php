@@ -18,32 +18,19 @@ $canEdit = $canDo->get('core.edit') || ($canDo->get('core.edit.own') && $this->i
 $tparams = $this->item->params;
 ?>
 
+<?php echo Text::_('COM_AGADVENTS_TEST') . $this->item->name; ?>
 <h2>
-<?php //echo Text::_('COM_AGADVENTS_NAME') . $this->item->name; ?>
+<?php echo $this->item->name; ?>
 </h2>
 
-<?php
-/*echo $this->item->published == 1;
-echo 'kk';
-echo   strtotime($this->item->publish_up) > strtotime(Factory::getDate()); echo 'kk';
-echo   !is_null($this->item->publish_down) ;echo 'kk';
-echo   strtotime($this->item->publish_down) < strtotime(Factory::getDate());
-echo '--today: ';
-echo strtotime(Factory::getDate());echo '-- down: ';
-echo strtotime($this->item->publish_down);
-echo 'kk';
-echo Factory::getDate();echo '-- sdkjfdlsjfldsk: ';
-echo $this->item->publish_down;echo '-- sdkjfdlsjfldsk: ';*/
-?>
-
-<?php if ($this->item->published == 1
-	&& strtotime($this->item->publish_up) < strtotime(Factory::getDate())
-	&& !is_null($this->item->publish_down)
-	&& strtotime($this->item->publish_down) > strtotime(Factory::getDate())) : ?>
-	<?php echo $this->item->fulltext; ?>
-<?php else : ?>
-	<?php echo $this->item->fulltext_no; ?>
-<?php endif; ?>
+<h3>
+<?php echo Text::_('COM_AGADVENTS_AKTIV') ?>
+</h3>
+<?php echo $this->item->fulltext; ?>
+<h3>
+<?php echo Text::_('COM_AGADVENTS_NOT_AKTIV') ?>
+</h3>
+<?php echo $this->item->fulltext_no; ?>
 
 <?php if ($canEdit) : ?>
 	<div class="icons">
