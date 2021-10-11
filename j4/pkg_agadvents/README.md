@@ -1,7 +1,9 @@
 # J4 Advent
 
-1. Sample Data - Agadvents aktivieren.
-2. Kategorie Weihnachten 2021 auswählen.
-3. Modul anlegen und auf allen Seiten veröffentlichen. Keine Position auswählen!
-4. Beitrag anlegen und im Editor unter CMS-Content das Modul auswählen. Im Beitrag ein Text eingefügt, der so ähnlich wie '{loadmoduleid 111}' aussieht.
-5. Einen Beitrag anlegen, der den gerade erstellen Beitrag im Frontend anzeigt.
+0. Zip-Datei `pkg-agadvents-4.x.x.zip` in Joomla 4 installieren. 
+1. Beispieldateien installieren: Unter `System | Plugins` das Plugin `Sample Data - Agadvents` aktivieren und danach im `Home Dashboard` die Beispieldatein ` Agadvents Sample Data` installieren.
+2. Modul anlegen: 
+   - Unter `Content | Site Modules` ein Modul vom Typ `Agadvent` auswählen. 
+   - Falls der Kalender auf einer `Position` angezeigt werden soll, diese im Starttabulator rechts auswählen. Alternativ in einem Beitrag den Text `{loadmoduleid 'MdoulID'}` eintragen.
+   - Für den Adventskalender im Tabulator `Àdvent Parameter` die Kategorie `Weihnachten 2021` auswählen.
+3. Bild für den Kalender ist in Optionen zur Kategorie veränderbar. 
