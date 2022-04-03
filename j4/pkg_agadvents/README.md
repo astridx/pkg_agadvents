@@ -10,3 +10,7 @@
    - Falls der Kalender auf einer `Position` angezeigt werden soll, diese im Starttabulator rechts auswählen. Alternativ in einem Beitrag den Text `{loadmoduleid 'MdoulID'}` eintragen.
    - Für den Adventskalender im Tabulator `Àdvent Parameter` die Kategorie `Weihnachten 2021` auswählen.
 3. Bild für den Kalender ist in Optionen zur Kategorie veränderbar. 
+
+4. Die Koordinaten können per Maus gezeichnet werden.
+![1](https://user-images.githubusercontent.com/9974686/161427545-2f8f58ec-48f2-46d5-bf3f-a4352cae5295.PNG)
+
