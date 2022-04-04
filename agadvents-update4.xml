@@ -5,7 +5,6 @@
         <description>pkg_agadvents</description>
         <element>pkg_agadvents</element>
         <type>package</type>
-        <client>site</client>
         <version>4.0.0</version>
         <infourl title="agadvents">https://github.com/astridx/pkg_agadvents/blob/v4.0.0/README.md</infourl>
         <downloads>
@@ -17,16 +16,13 @@
         </tags>
         <maintainer>Astrid Günther</maintainer>
         <maintainerurl>https://astrid-guenther.de</maintainerurl>
-        <targetplatform name="joomla" version="4.0.0"/>
-        <sha256></sha256>
-        <sha384></sha384>
+        <targetplatform name="joomla" version="4.[01]"/>
     </update>
     <update>
         <name>pkg_agadvents</name>
         <description>pkg_agadvents</description>
         <element>pkg_agadvents</element>
         <type>package</type>
-        <client>site</client>
         <version>4.0.3</version>
         <infourl title="agadvents">https://github.com/astridx/pkg_agadvents/blob/v4.0.3/README.md</infourl>
         <downloads>
@@ -38,6 +34,6 @@
         </tags>
         <maintainer>Astrid Günther</maintainer>
         <maintainerurl>https://astrid-guenther.de</maintainerurl>
-        <targetplatform name="joomla" version="4.[0123]"/>
+        <targetplatform name="joomla" version="4.[01]"/>
     </update>
 </updates>
