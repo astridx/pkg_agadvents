@@ -65,7 +65,7 @@
 			class="validate-validatecords"
 			label="COM_AGADVENTS_FIELD_CORDS_B_LABEL"
 			size="40"
-			default=""
+			default="142,37  141,77  141,77  176,72 "
 		 />
 
 		<field
@@ -75,7 +75,7 @@
 			class="validate-validatecords"
 			label="COM_AGADVENTS_FIELD_CORDS_F_LABEL"
 			size="40"
-			default="0"
+			default="37,83  77,84  77,84  72,49 "
 		 />
 
 		<field

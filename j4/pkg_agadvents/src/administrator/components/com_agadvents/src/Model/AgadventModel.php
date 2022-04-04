@@ -115,8 +115,16 @@ class AgadventModel extends AdminModel
 		$catid = $this->getItem()->catid;
 		$categories = Categories::getInstance('com_agadvents', []);
 		$category = $categories->get($this->getItem()->catid);
-		$catimage = Uri::root() . "/" . $category->getParams()->get('image');
+		$uri = Uri::root();
+		$image = $category->getParams()->get('image');
+		$fallbackimage = "media/com_agadvents/images/noimage.png";
 
+		$catimage =  $uri . $fallbackimage;
+
+		if ($image !== null){
+			$catimage =  $uri . $category->getParams()->get('image');
+		} 
+		
 		return $catimage;
 	}
 
