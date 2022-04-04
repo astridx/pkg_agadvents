@@ -16,7 +16,7 @@
         </tags>
         <maintainer>Astrid Günther</maintainer>
         <maintainerurl>https://astrid-guenther.de</maintainerurl>
-        <targetplatform name="joomla" version="4.[01]"/>
+        <targetplatform name="joomla" version="4.*"/>
     </update>
     <update>
         <name>pkg_agadvents</name>
@@ -34,6 +34,6 @@
         </tags>
         <maintainer>Astrid Günther</maintainer>
         <maintainerurl>https://astrid-guenther.de</maintainerurl>
-        <targetplatform name="joomla" version="4.[01]"/>
+        <targetplatform name="joomla" version="4.*"/>
     </update>
 </updates>
