@@ -21,8 +21,8 @@
     <update>
         <name>pkg_agadvents</name>
         <description>pkg_agadvents</description>
-        <element>pkg_agadvents</element>
-        <type>package</type>
+        <element>com_agadvents</element>
+        <type>component</type>
         <version>4.0.3</version>
         <infourl title="agadvents">https://github.com/astridx/pkg_agadvents/blob/v4.0.3/README.md</infourl>
         <downloads>
