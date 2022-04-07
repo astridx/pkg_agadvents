@@ -12,10 +12,7 @@
 	<namespace path="src">AgadventNamespace\Module\Agadvent</namespace>
 	<files>
 		<filename module="mod_agadvent">mod_agadvent.php</filename>
-		<folder>tmpl</folder>
-		<folder>src</folder>
-		<folder>language</folder>
-		<filename>mod_agadvent.xml</filename>
+		##MODULE_FILES##
 	</files>
 	<config>
 		<fields name="params">

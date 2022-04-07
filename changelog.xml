@@ -15,4 +15,12 @@
 			<item>Add fallbackimage</item>
 		</note>
 	</changelog>
+	<changelog>
+		<element>com_agadvents</element>
+		<type>component</type>
+		<version>4.0.4</version>
+		<note>
+			<item>Add special link</item>
+		</note>
+	</changelog>
 </changelogs>

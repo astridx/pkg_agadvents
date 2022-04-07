@@ -79,6 +79,25 @@
 		 />
 
 		<field
+			name="showurl"
+			type="list"
+			label="COM_AGADVENTS_FIELD_SHOWURL_LABEL"
+			default="0"
+			>
+			<option value="0">JNO</option>
+			<option value="1">absolute</option>
+			<option value="2">relativ</option>
+		</field>
+
+		<field
+			name="url"
+			type="url"
+			label="COM_AGADVENTS_FIELD_URL_LABEL"
+			filter="url"
+			showon="showurl:1,2"
+		/>
+
+		<field
 			name="language"
 			type="contentlanguage"
 			label="JFIELD_LANGUAGE_LABEL"

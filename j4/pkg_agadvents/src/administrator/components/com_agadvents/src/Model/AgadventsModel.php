@@ -82,6 +82,8 @@ class AgadventsModel extends ListModel
 					$this->getState(
 						'list.select',
 						'a.id, a.name, a.catid' .
+						', a.url' .
+						', a.showurl' .
 						', a.access' .
 						', a.checked_out' .
 						', a.checked_out_time' .

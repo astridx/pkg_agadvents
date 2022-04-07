@@ -72,6 +72,8 @@ $tmpl = $input->get('tmpl', '', 'cmd') === 'component' ? '&tmpl=component' : '';
 								<small><?php echo Text::_('COM_AGADVENTS_TMPL_EDIT_SHOWINACTIVE'); ?></small>
 								<?php echo $this->getForm()->renderField('showinactive'); ?>
 								<?php echo $this->getForm()->renderField('fulltext_no'); ?>
+								<?php echo $this->getForm()->renderField('showurl'); ?>
+								<?php echo $this->getForm()->renderField('url'); ?>
 							</div>
 						</div>
 					</div>

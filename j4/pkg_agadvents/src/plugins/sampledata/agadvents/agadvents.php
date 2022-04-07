@@ -176,14 +176,15 @@ class PlgSampledataAgadvents extends CMSPlugin
 			$item = [
 				'name'  => 'Tag '. $i,
 				'alias'    => 'tag'. $i,
+				'showurl'    => '0',
 				'catid'    => $catId_weihnachten,
 				'fulltext' => Text::_('PLG_SAMPLEDATA_AGADVENTS_FULL_TEXT') . $i,
 				'fulltext_no' => Text::_('PLG_SAMPLEDATA_AGADVENTS_FULL_TEXT_NO') . $i,
 				'published' => 1,
 				'cords' => '',
 				'cordsimagemap' => '',
-				'publish_up' => '2021-12-' . sprintf("%02d", $i) . ' 00:00:01',
-				'publish_down' => '2021-12-' . sprintf("%02d", $i) . ' 23:59:59',
+				'publish_up' => '2022-12-' . sprintf("%02d", $i) . ' 00:00:01',
+				'publish_down' => '2022-12-' . sprintf("%02d", $i) . ' 23:59:59',
 				'params'  => '{}'
 			];
 
@@ -305,6 +306,7 @@ class PlgSampledataAgadvents extends CMSPlugin
 			$item = [
 				'name'  => 'Item '. $i,
 				'alias'    => 'item'. $i,
+				'showurl'    => '0',
 				'catid'    => $catId_imagemap,
 				'fulltext' => Text::_('PLG_SAMPLEDATA_AGADVENTS_IMAGEMAP_FULL_TEXT') . $i,
 				'fulltext_no' => Text::_('PLG_SAMPLEDATA_AGADVENTS_IMAGEMAP_FULL_TEXT_NO') . $i,
