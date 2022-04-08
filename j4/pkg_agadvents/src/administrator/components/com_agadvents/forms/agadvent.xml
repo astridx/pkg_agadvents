@@ -91,7 +91,7 @@
 
 		<field
 			name="url"
-			type="url"
+			type="text"
 			label="COM_AGADVENTS_FIELD_URL_LABEL"
 			showon="showurl:1,2"
 		/>

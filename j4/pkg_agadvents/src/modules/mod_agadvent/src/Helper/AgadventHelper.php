@@ -55,9 +55,16 @@ abstract class AgadventHelper
 	{
 		$categories = Categories::getInstance('com_agadvents', []);
 		$category = $categories->get($catid);
-		$catimage = Uri::root() . "/" . $category->getParams()->get('image');
+		
+		$catimage = $category->getParams()->get('image');
 
-		return $catimage;
+		if ($catimage !== null) {
+			$catimageURL = Uri::root() . "/" . $catimage;
+		} else {
+			$catimageURL = Uri::root() . "/media/com_agadvents/images/noimage.png";
+		}
+
+		return $catimageURL;
 	}
 
 	/**

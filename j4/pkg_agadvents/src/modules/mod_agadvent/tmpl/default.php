@@ -54,7 +54,8 @@ $info = getimagesize($catimage);
 			</a>
 		<?php endif; ?>
 		<?php if ($item->showurl === "2") : ?>  
-			<a xlink:href="<?php Uri::root(true) . $item->url  ?>">
+			<?php $itemurl =  Uri::root() . $item->url; ?>
+			<a xlink:href="<?php echo $itemurl; ?>">
 				<polygon points="<?php echo $item->cordsimagemap; ?>" style="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_STYLE_POLYGONE'); ?>" />
 			</a>
 		<?php endif; ?>
