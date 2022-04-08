@@ -23,4 +23,13 @@
 			<item>Add special link</item>
 		</note>
 	</changelog>
+	<changelog>
+		<element>com_agadvents</element>
+		<type>component</type>
+		<version>4.0.5</version>
+		<note>
+			<item>Fix error in database for special link.</item>
+			<item>Fix sample data.</item>
+		</note>
+	</changelog>
 </changelogs>
