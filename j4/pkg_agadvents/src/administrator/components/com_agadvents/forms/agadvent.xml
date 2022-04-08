@@ -93,7 +93,6 @@
 			name="url"
 			type="url"
 			label="COM_AGADVENTS_FIELD_URL_LABEL"
-			filter="url"
 			showon="showurl:1,2"
 		/>
 
