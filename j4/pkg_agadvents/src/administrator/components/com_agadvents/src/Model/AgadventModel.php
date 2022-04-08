@@ -121,9 +121,9 @@ class AgadventModel extends AdminModel
 
 		$catimage =  $uri . $fallbackimage;
 
-		if ($image !== null) {
+		if ($image !== null){
 			$catimage =  $uri . $category->getParams()->get('image');
-		}
+		} 
 		
 		return $catimage;
 	}
