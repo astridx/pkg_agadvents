@@ -14,3 +14,4 @@
 4. Die Koordinaten können per Maus gezeichnet werden.
 ![1](https://user-images.githubusercontent.com/9974686/161427545-2f8f58ec-48f2-46d5-bf3f-a4352cae5295.PNG)
 
+[![](https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KQMKUVAX5SPVS&source=url)
