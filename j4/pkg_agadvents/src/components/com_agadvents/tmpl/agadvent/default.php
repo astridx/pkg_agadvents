@@ -18,24 +18,6 @@ $canEdit = $canDo->get('core.edit') || ($canDo->get('core.edit.own') && $this->i
 $tparams = $this->item->params;
 ?>
 
-<h2>
-<?php //echo Text::_('COM_AGADVENTS_NAME') . $this->item->name; ?>
-</h2>
-
-<?php
-/*echo $this->item->published == 1;
-echo 'kk';
-echo   strtotime($this->item->publish_up) > strtotime(Factory::getDate()); echo 'kk';
-echo   !is_null($this->item->publish_down) ;echo 'kk';
-echo   strtotime($this->item->publish_down) < strtotime(Factory::getDate());
-echo '--today: ';
-echo strtotime(Factory::getDate());echo '-- down: ';
-echo strtotime($this->item->publish_down);
-echo 'kk';
-echo Factory::getDate();echo '-- sdkjfdlsjfldsk: ';
-echo $this->item->publish_down;echo '-- sdkjfdlsjfldsk: ';*/
-?>
-
 <?php if ($this->item->published == 1
 	&& strtotime($this->item->publish_up) < strtotime(Factory::getDate())
 	&& !is_null($this->item->publish_down)
