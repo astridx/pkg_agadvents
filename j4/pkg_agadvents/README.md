@@ -14,3 +14,10 @@
 4. Die Koordinaten können per Maus gezeichnet werden.
 ![1](https://user-images.githubusercontent.com/9974686/161427545-2f8f58ec-48f2-46d5-bf3f-a4352cae5295.PNG)
 
+# FAQ
+
+1.  Warning: getimagesize(): http:// wrapper is disabled in the server configuration by allow_url_fopen=0 in /var/www/web317/html/rcnneu/modules/mod_agadvent/tmpl/default.php on line 20
+
+Diese Warnung bedeutet, dass der Webserver ´allow_url_fopen´ deaktiviert hat. Dies ist eine Voraussetzung für agadvents. Bearbeiten Sie die php.ini-Datei Ihrer Website, um die Einstellung zu aktivieren, oder bitten Sie Ihren Hoster, dies zu tun.
+
+[![](https://www.paypalobjects.com/en_US/DK/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=KQMKUVAX5SPVS&source=url)
