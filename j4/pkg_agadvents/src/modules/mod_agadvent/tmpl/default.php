@@ -18,10 +18,12 @@ $info = [];
 $info[0] = 1;
 $info[1] = 1;
 $info = getimagesize($catimage);
+$layout = 'default';
 ?>
 
 <?php if ($test) : ?>
-	<?php // echo Text::_('COM_AGADVENTS_MODULE_TMPL_TEST'); ?>
+	<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_TEST'); ?>
+	<?php $layout = 'test'; ?>
 <?php endif; ?>
 
 <?php if ($mode === 'image' || $mode === 'imageandlist') : ?>  
@@ -39,12 +41,12 @@ $info = getimagesize($catimage);
 		}
 		</style>
 	</defs> 
- 
+
 	<image xlink:href="<?php echo $catimage; ?>" alt="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_ALT'); ?>" />
 	
 	<?php foreach ($list as $i => $item) : ?>
 		<?php if ($item->showurl === "0") : ?>  
-			<a xlink:href="<?php echo Route::_(RouteHelper::getAgadventRoute($item->slug, $item->catid, $item->language)) . '?layout=' . $item->layout; ?>">
+			<a xlink:href="<?php echo Route::_(RouteHelper::getAgadventRoute($item->slug, $item->catid, $item->language)) . '&layout=' . $layout; ?>">
 				<polygon points="<?php echo $item->cordsimagemap; ?>" style="<?php echo Text::_('COM_AGADVENTS_MODULE_TMPL_DEFAULT_STYLE_POLYGONE'); ?>" />
 			</a>
 		<?php endif; ?>

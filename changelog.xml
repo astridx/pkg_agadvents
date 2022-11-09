@@ -32,4 +32,12 @@
 			<item>Fix sample data.</item>
 		</note>
 	</changelog>
+	<changelog>
+		<element>com_agadvents</element>
+		<type>component</type>
+		<version>4.0.6</version>
+		<note>
+			<item>Fix test mode.</item>
+		</note>
+	</changelog>
 </changelogs>
